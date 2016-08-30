@@ -18,7 +18,6 @@ class App extends React.Component{
         )
     }
 };
-
 const app = document.createElement('div');
 $('body').append(app);
 ReactDOM.render(<App />, app);
