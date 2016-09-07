@@ -2,12 +2,14 @@ import '../node_modules/bootstrap/scss/bootstrap.scss';
 import React from 'react';
 import ReactDOM from 'react-dom';
 import $ from 'jquery';
+import vconsole from 'vconsole';
 
 class App extends React.Component{
     constructor() {
         super();
     }
     render() {
+        console.log("hello world");
         //JSX here!
         return (
           <div className="container">
