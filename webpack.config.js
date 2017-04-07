@@ -1,16 +1,31 @@
 var path = require('path');
 var webpack = require('webpack');
 var HtmlwebpackPlugin = require('html-webpack-plugin');
-
+var ExtractTextPlugin = require('extract-text-webpack-plugin');
 var ROOT_PATH = path.resolve(__dirname);
 var APP_PATH = path.resolve(ROOT_PATH, 'app');
 var BUILD_PATH = path.resolve(ROOT_PATH, 'build');
-var TEM_PATH = path.resolve(ROOT_PATH, 'templates');
+
+var postcssImport = require('postcss-import');
+var precss = require('precss');
+var postcssMixins = require('postcss-mixins');
+var postcssNested = require('postcss-nested');
+var postcssCssnext = require('postcss-cssnext');
+
+var AUTOPREFIXER_BROWSERS = [
+  'Android 2.3',
+  'Android >= 4',
+  'Chrome >= 35',
+  'Firefox >= 31',
+  'Explorer >= 9',
+  'iOS >= 6',
+  'Opera >= 12',
+  'Safari >= 7.1',
+];
 
 module.exports= {
   entry: {
-    app: path.resolve(APP_PATH, 'index.jsx'),
-    mobile: path.resolve(APP_PATH, 'mobile.jsx'),
+    app: path.resolve(APP_PATH, 'app.js'),
     vendors: ['jquery', 'moment']
   },
   output: {
@@ -59,6 +74,10 @@ module.exports= {
       {
         test: /\.scss$/,
         loaders: ['style', 'css', 'sass']
+      }, 
+      {
+        test: /\.css$/,
+        loader: ExtractTextPlugin.extract('style-loader', 'css-loader!postcss-loader'),
       }
     ]
   },
@@ -70,19 +89,28 @@ module.exports= {
   plugins: [
     //这个使用uglifyJs压缩你的js代码
     new webpack.optimize.UglifyJsPlugin({minimize: true}),
+    //把入口文件里面的数组打包成verdors.js
+    new webpack.optimize.CommonsChunkPlugin('vendors', 'vendors.js'),
+    new ExtractTextPlugin('public/styles/demo.css'),
     new HtmlwebpackPlugin({
       title: 'My first react app',
-      template: path.resolve(TEM_PATH, 'index.html'),
+      template: path.resolve(APP_PATH, 'index.html'),
       filename: 'index.html',
       chunks: ['app', 'vendors'],
       inject: 'body'
-    }),
-    new HtmlwebpackPlugin({
-      title: 'Hello Mobile app',
-      template: path.resolve(TEM_PATH, 'mobile.html'),
-      filename: 'mobile.html'
-    }),
-    //把入口文件里面的数组打包成verdors.js
-    new webpack.optimize.CommonsChunkPlugin('vendors', 'vendors.js')
-  ]
+    })
+  ],
+   postcss: function plugin(bundler) {
+    return [
+      postcssImport({
+        addDependencyTo: bundler,
+      }),
+      precss(),
+      postcssMixins(),
+      postcssNested(),
+      postcssCssnext({
+        autoprefixer: AUTOPREFIXER_BROWSERS,
+      }),
+    ];
+  }
 }

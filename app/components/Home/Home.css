@@ -1,0 +1,10 @@
+.Home {
+  text-align: center;
+    li {
+        margin: 20px;
+        font-size: 20px;
+        a {
+            text-decoration: underline
+        }
+    }
+}
