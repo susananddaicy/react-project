@@ -26,7 +26,7 @@ var AUTOPREFIXER_BROWSERS = [
 module.exports= {
   entry: {
     app: path.resolve(APP_PATH, 'app.js'),
-    vendors: ['jquery', 'moment']
+    vendors: ['babel-polyfill', 'react', 'react-dom', 'fastclick']
   },
   output: {
     path: BUILD_PATH,
@@ -54,13 +54,13 @@ module.exports= {
   //babel重要的loader在这里
   module: {
     //loader前执行处理，这样每次npm run start的时候就可以看到jshint的提示信息
-    preLoaders: [
+/*    preLoaders: [
        {
          test: /\.jsx?$/,
          include: APP_PATH,
          loader: "jshint-loader"
        }
-     ],
+     ],*/
     loaders: [
       {
         test: /\.jsx?$/,
@@ -91,8 +91,8 @@ module.exports= {
     new webpack.optimize.UglifyJsPlugin({minimize: true}),
     //把入口文件里面的数组打包成verdors.js
     new webpack.optimize.CommonsChunkPlugin('vendors', 'vendors.js'),
-    new ExtractTextPlugin('public/styles/demo.css'),
-    new HtmlwebpackPlugin({
+    new ExtractTextPlugin('public/styles/demo.css'), // 把css自动插入到head里
+    new HtmlwebpackPlugin({ // 会把压缩好的app.js和vendors.js自动插入到html中的body里
       title: 'My first react app',
       template: path.resolve(APP_PATH, 'index.html'),
       filename: 'index.html',

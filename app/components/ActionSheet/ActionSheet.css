@@ -1,0 +1,53 @@
+.ActionSheet {
+  &-Wrap {
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+    transform: translate3d(0, 100%, 0);
+    transition-duration: 300ms;
+    z-index: 201;
+
+    &-Content {
+      background-color: #fff;
+      text-align: center;
+      border-radius: 0.5rem;
+
+      &-Menu {
+        padding-left: 1.5rem;
+        padding-right: 1.5rem;
+
+        &-Cell {
+          height: 4.5rem;
+          line-height: 4.5rem;
+          font-size: 1.5rem;
+          color: #55acee;
+        }
+      }
+
+      &-Title {
+        height: 4.5rem;
+        line-height: 4.5rem;
+        font-size: 1.3rem;
+        color: #13334d;
+      }
+    }
+
+    &-Cancel {
+      background-color: #fff;
+      text-align: center;
+      height: 4.5rem;
+      margin-top: 1rem;
+      margin-bottom: 1.5rem;
+      line-height: 4.5rem;
+      font-size: 1.8rem;
+      color: #55acee;
+      border-radius: 0.5rem;
+    }
+  }
+  .isShow {
+    transform: translate3d(0, 0, 0);
+  }
+}

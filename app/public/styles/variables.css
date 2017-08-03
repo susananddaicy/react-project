@@ -1,0 +1,94 @@
+:root {
+
+  /*
+   * Font Family
+   * ======================================================================== */
+  --LUUIFontFamily: 'Arial', 'Microsoft YaHei', Helvetica, sans-serif;
+  --LUUIFontCondensedFamily: 'Arial Narrow', HelveticaNeue-CondensedBold, var(--LUUIFontFamily);
+  --LUUIFontIconFamily: 'lufont';
+
+  /*
+   * Font Size
+   * ======================================================================== */
+  --LUUIFontSize22: 2.2rem;
+  --LUUIFontSize20: 2.0rem;
+  --LUUIFontSize18: 1.8rem;
+  --LUUIFontSize16: 1.6rem;
+  --LUUIFontSize15: 1.5rem;
+  --LUUIFontSize14: 1.4rem;
+  --LUUIFontSize13: 1.3rem;
+  --LUUIFontSize12: 1.2rem;
+  --LUUIFontSize11: 1.1rem;
+  --LUUIFontSize10: 1.0rem;
+
+  /*
+   * Font Size
+   * ======================================================================== */
+  --LUUIFont1: normal var(--LUUIFontSize40) var(--LUUIFontFamily);
+  --LUUIFont2: normal var(--LUUIFontSize36) var(--LUUIFontFamily);
+  --LUUIFont3: normal var(--LUUIFontSize50) var(--LUUIFontFamily);
+
+  /*
+   * Color Rules
+   * ======================================================================== */
+  --Color-Base-Important1: #fc7946; /* 老变量名：--LUUIColor10，按钮、价格、强调内容, 橙色 */
+  --Color-Base-Important2: #13334d; /* 老变量名：--LUUIColor8， 标题、项目名称，藏青色 */
+  --Color-Base-Important3: #5c6bc2; /* 老变量名：--LUUIColor11， Navigation Bar背景色、 选中的Tab Icon，蓝紫色 */
+  --Color-Base-Normal1: #697d91; /* 老变量名：--LUUIColor6， 普通级段落信息、段落 名等，深灰色 */
+  --Color-Base-Normal2: #9dacb6; /* 老变量名：--LUUIColor9， 辅助、次要信息，中灰色 */
+  --Color-Base-Normal3: #c1c9cf; /* 表单输入提示，灰色 */
+  --Color-Base-Weak1: #d8e2e9; /* 老变量名：--LUUIColor5，边框色、分割色、禁用 按钮底色，浅灰色 */
+  --Color-Base-Weak2: #edf2f6; /* 老变量名：--LUUIColor7，页面底色，灰蓝色 */
+  --Color-Base-Weak3: #55acee; /* 老变量名：--LUUIColor16，文字链接，蓝色 */
+  --Color-Base-Weak4: #5eb87b; /* 老变量名：--LUUIColor23，利率\价格下调、即将 开始提醒，绿色 */
+  --Color-Base-Weak5: #e4362d; /* 利率上升，红色 */
+  --Color-d8e2e9: #d8e2e9; /* 没删掉是因为怕有人已经用了--Color-d8e2e9 */
+  --Color-ffffff: #fff; /* 老变量名：--LUUIColor15 */
+  --Color-2d3740: #2d3740; /* 老变量名：--LUUIColor26 */
+  --Color-16232f: #16232f; /* 老变量名：--LUUIColor25 */
+  --Color-91a7ff: #91a7ff; /* 老变量名：--LUUIColor13 */
+  --Color-ffc37c: #ffc37c; /* 老变量名：--LUUIColor12 */
+  --Color-e6e9ee: #e6e9ee; /* 老变量名：--LUUIColor24 */
+  --Color-fff5d2: #fff5d2; /* 老变量名：--LUUIColor29 */
+  --Color-c4d6dc: #c4d6dc;
+  --Color-87d676: #87d676;
+  --Color-fe864a: #fe864a;
+  --Color-Tight-Yellow: #fff6d4; /* 浅黄色，在产险渠道E享详情页Banner标签用到 */
+  --Color-ffa421: #ffa421; /* V3.5.8版本，KYC修改星星的颜色 */
+  /*
+   * Colors
+   * ======================================================================== */
+  --white-base: hsl(255, 255, 255);
+  --gray-darker: color(black lightness(+13.5%)); /* #222 */
+  --gray-dark: color(black lightness(+25%)); /* #404040 */
+  --gray: color(black lightness(+33.5%)); /* #555 */
+  --gray-light: color(black lightness(+46.7%)); /* #777 */
+  --gray-lighter: color(black lightness(+93.5%)); /* #eee */
+
+  /*
+   * Typography
+   * ======================================================================== */
+  --font-family-base: 'Segoe UI', 'HelveticaNeue-Light', sans-serif;
+
+  /*
+   * Layout
+   * ======================================================================== */
+  --max-content-width: 1000px;
+
+  /*
+   * Media queries breakpoints
+   * ======================================================================== */
+  --screen-xs-min: 480px; /* Extra small screen / phone */
+  --screen-sm-min: 768px; /* Small screen / tablet */
+  --screen-md-min: 992px; /* Medium screen / desktop */
+  --screen-lg-min: 1200px; /* Large screen / wide desktop */
+
+  /*
+   * Animations
+   * ======================================================================== */
+  --animation-swift-out: 0.45s cubic-bezier(0.3, 1, 0.4, 1) 0s;
+
+  /*
+   * Context path
+   * ======================================================================== */
+}

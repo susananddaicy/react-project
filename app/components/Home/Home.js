@@ -15,8 +15,9 @@ class Home extends Component {
     return (
       <div className="Home">
         <div className="Home-container">
+        <p>React Components</p>
         <ul>
-          <li><Link to="actionSheet">ActionSheet</Link></li>
+          <li><Link to="actionSheet">ActionSheet(动作面板)</Link></li>
         </ul>
         </div>
       </div>

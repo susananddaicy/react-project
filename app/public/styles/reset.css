@@ -1,0 +1,212 @@
+/* 重置浏览器默认样式和 */
+* {
+  box-sizing: border-box; /* 改变所有元素默认盒子模型 */
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0); /* CC 去除默认边距和触摸高亮 */
+}
+
+:root {
+  font-size: 10px;
+  font-family: Helvetica, Arial, "Microsoft YaHei", "Droid Sans", sans-serif;
+  text-size-adjust: 100%;
+}
+
+html,
+body {
+  position: relative;
+  height: 100%;
+  user-select: none;
+}
+
+body,
+dl,
+dd,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+form,
+figure,
+fieldset {
+  margin: 0;
+}
+
+ol,
+li,
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+input,
+textarea,
+select,
+button {
+  font: inherit;
+  border-radius: 0;
+  outline: none;
+  appearance: none;
+  tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+img {
+  max-width: 100%;
+  vertical-align: middle;
+  border: none;
+}
+
+a {
+  color: #000;
+  text-decoration: none;
+  transition: all 0.1s;
+}
+
+b,
+i,
+cite {
+  font-style: normal;
+  font-weight: normal;
+}
+
+table {
+  border-spacing: 0;
+  border-collapse: collapse;
+}
+
+/* 清除浮动 */
+.ks-clear::after,
+.clear::after {
+  display: block;
+  height: 0;
+  clear: both;
+  content: '\20';
+}
+
+.ks-clear,
+.clear {
+  *zoom: 1;
+}
+
+/* flex layout */
+.flex-hrz {
+  display: flex;
+  flex-flow: row wrap;
+}
+
+.flex-full {
+  flex: 1;
+}
+
+.flex-init {
+  flex: initial;
+}
+
+/* font 大小定义 */
+.font32 {
+  font-size: 3.2rem;
+}
+
+.font28 {
+  font-size: 2.8rem;
+}
+
+.font24 {
+  font-size: 2.4rem;
+}
+
+.font22 {
+  font-size: 2.2rem;
+}
+
+.font20 {
+  font-size: 2.0rem;
+}
+
+.font18 {
+  font-size: 1.8rem;
+}
+
+.font16 {
+  font-size: 1.6rem;
+}
+
+.font15 {
+  font-size: 1.5rem;
+}
+
+.font14 {
+  font-size: 1.4rem;
+}
+
+.font13 {
+  font-size: 1.3rem;
+}
+
+.font12 {
+  font-size: 1.2rem;
+}
+
+.font11 {
+  font-size: 1.1rem;
+}
+
+.font10 {
+  font-size: 1.0rem;
+}
+
+/* 标准色定义 */
+.important-color-1 {
+  color: #fc7946;
+}
+
+.important-color-2 {
+  color: #13334d;
+}
+
+.important-color-3 {
+  color: #5c6bc2;
+}
+
+.normal-color-1 {
+  color: #697d91;
+}
+
+.normal-color-2 {
+  color: #9dacb6;
+}
+
+.normal-color-3 {
+  color: #fff;
+}
+
+.weak-color-1 {
+  color: #d8e2e9;
+}
+
+.weak-color-2 {
+  color: #edf2f6;
+}
+
+.weak-color-3 {
+  color: #55acee;
+}
+
+.weak-color-4 {
+  color: #5eb87b;
+}
+
+.weak-color-5 {
+  color: #e4362d;
+}
+
+/* 透明度 */
+.opacity-50 {
+  opacity: 0.5;
+}
+
+.opacity-60 {
+  opacity: 0.6;
+}

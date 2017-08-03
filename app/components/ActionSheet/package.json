@@ -1,0 +1,6 @@
+{
+  "name": "ActionSheet",
+  "version": "0.0.0",
+  "private": true,
+  "main": "./ActionSheet.js"
+}

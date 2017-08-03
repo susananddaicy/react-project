@@ -1,0 +1,293 @@
+/* 线框抽离 */
+.line-all {
+  border: 1px solid var(--Color-d8e2e9);
+}
+
+@media (-webkit-min-device-pixel-ratio: 2), (min-device-pixel-ratio: 2) {
+  .line-all {
+    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, var(--Color-d8e2e9)), color-stop(50%, var(--Color-d8e2e9)), color-stop(50%, transparent)), -webkit-gradient(linear, left top, left bottom, color-stop(50%, transparent), color-stop(50%, transparent), color-stop(100%, var(--Color-d8e2e9)));
+    background-image: -webkit-linear-gradient(top, var(--Color-d8e2e9) 0, var(--Color-d8e2e9) 50%, transparent 50%), -webkit-linear-gradient(left, transparent 50%, var(--Color-d8e2e9) 50%, var(--Color-d8e2e9) 100%), -webkit-linear-gradient(top, transparent 50%, var(--Color-d8e2e9) 50%, var(--Color-d8e2e9) 100%), -webkit-linear-gradient(left, var(--Color-d8e2e9) 0, var(--Color-d8e2e9) 50%, transparent 50%);
+    background-image: linear-gradient(to bottom, var(--Color-d8e2e9) 0, var(--Color-d8e2e9) 50%, transparent 50%), linear-gradient(to right, transparent 50%, var(--Color-d8e2e9) 50%, var(--Color-d8e2e9) 100%), linear-gradient(to bottom, transparent 50%, var(--Color-d8e2e9) 50%, var(--Color-d8e2e9) 100%), linear-gradient(to right, var(--Color-d8e2e9) 0, var(--Color-d8e2e9) 50%, transparent 50%);
+    background-repeat: no-repeat;
+    background-position: top, left, bottom, right;
+    -webkit-background-size: 100% 1px, 1px 100%, 100% 1px, 1px 100%;
+    background-size: 100% 1px, 1px 100%, 100% 1px, 1px 100%;
+    border: none;
+  }
+}
+
+@media (-webkit-min-device-pixel-ratio: 3), (min-device-pixel-ratio: 3) {
+  .line-all {
+    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, var(--Color-d8e2e9)), color-stop(33%, var(--Color-d8e2e9)), color-stop(33%, transparent)), -webkit-gradient(linear, left top, right top, color-stop(66%, transparent), color-stop(66%, var(--Color-d8e2e9)), color-stop(100%, var(--Color-d8e2e9))), -webkit-gradient(linear, left top, left bottom, color-stop(66%, transparent), color-stop(66%, transparent), color-stop(66%, var(--Color-d8e2e9))), -webkit-gradient(linear, left top, right top, color-stop(0%, var(--Color-d8e2e9)), color-stop(33%, var(--Color-d8e2e9)), color-stop(33%, transparent));
+    background-image: -webkit-linear-gradient(top, var(--Color-d8e2e9) 0, var(--Color-d8e2e9) 33%, transparent 33%), -webkit-linear-gradient(left, transparent 66%, var(--Color-d8e2e9) 66%, var(--Color-d8e2e9) 100%), -webkit-linear-gradient(top, transparent 66%, var(--Color-d8e2e9) 66%, var(--Color-d8e2e9) 100%), -webkit-linear-gradient(left, var(--Color-d8e2e9) 0, var(--Color-d8e2e9) 33%, transparent 33%);
+    background-image: linear-gradient(to bottom, var(--Color-d8e2e9) 0, var(--Color-d8e2e9) 33%, transparent 33%), linear-gradient(to right, transparent 66%, var(--Color-d8e2e9) 66%, var(--Color-d8e2e9) 100%), linear-gradient(to bottom, transparent 66%, var(--Color-d8e2e9) 66%, var(--Color-d8e2e9) 100%), linear-gradient(to right, var(--Color-d8e2e9) 0, var(--Color-d8e2e9) 33%, transparent 33%);
+    background-repeat: no-repeat;
+    background-position: top, left, bottom, right;
+    -webkit-background-size: 100% 1px, 1px 100%, 100% 1px, 1px 100%;
+    background-size: 100% 1px, 1px 100%, 100% 1px, 1px 100%;
+    border: none;
+  }
+}
+
+.line-topbottom {
+  border: 1px solid var(--Color-d8e2e9);
+}
+
+@media (-webkit-min-device-pixel-ratio: 2), (min-device-pixel-ratio: 2) {
+  .line-topbottom {
+    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, var(--Color-d8e2e9)), color-stop(50%, var(--Color-d8e2e9)), color-stop(50%, transparent)), -webkit-gradient(linear, left top, right top, color-stop(50%, transparent), color-stop(50%, var(--Color-d8e2e9)), color-stop(100%, var(--Color-d8e2e9))), -webkit-gradient(linear, left top, left bottom, color-stop(50%, transparent), color-stop(50%, transparent), color-stop(100%, var(--Color-d8e2e9))), -webkit-gradient(linear, left top, right top, color-stop(0%, var(--Color-d8e2e9)), color-stop(50%, var(--Color-d8e2e9)), color-stop(50%, transparent));
+    background-image: -webkit-linear-gradient(top, var(--Color-d8e2e9) 0, var(--Color-d8e2e9) 50%, transparent 50%), -webkit-linear-gradient(top, transparent 50%, var(--Color-d8e2e9) 50%, var(--Color-d8e2e9) 100%);
+    background-image: linear-gradient(to bottom, var(--Color-d8e2e9) 0, var(--Color-d8e2e9) 50%, transparent 50%), linear-gradient(to bottom, transparent 50%, var(--Color-d8e2e9) 50%, var(--Color-d8e2e9) 100%);
+    background-repeat: no-repeat;
+    background-position: top, bottom;
+    -webkit-background-size: 100% 1px, 100% 1px;
+    background-size: 100% 1px, 100% 1px;
+    border: none;
+  }
+}
+
+@media (-webkit-min-device-pixel-ratio: 3), (min-device-pixel-ratio: 3) {
+  .line-topbottom {
+    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, var(--Color-d8e2e9)), color-stop(65%, var(--Color-d8e2e9)), color-stop(65%, transparent)), -webkit-gradient(linear, left top, right top, color-stop(65%, transparent), color-stop(65%, var(--Color-d8e2e9)), color-stop(100%, var(--Color-d8e2e9))), -webkit-gradient(linear, left top, left bottom, color-stop(65%, transparent), color-stop(65%, transparent), color-stop(100%, var(--Color-d8e2e9))), -webkit-gradient(linear, left top, right top, color-stop(0%, var(--Color-d8e2e9)), color-stop(65%, var(--Color-d8e2e9)), color-stop(65%, transparent));
+    background-image: -webkit-linear-gradient(top, var(--Color-d8e2e9) 0, var(--Color-d8e2e9) 33%, transparent 33%), -webkit-linear-gradient(top, transparent 65%, var(--Color-d8e2e9) 65%, var(--Color-d8e2e9) 100%);
+    background-image: linear-gradient(to bottom, var(--Color-d8e2e9) 0, var(--Color-d8e2e9) 33%, transparent 33%), linear-gradient(to bottom, transparent 65%, var(--Color-d8e2e9) 65%, var(--Color-d8e2e9) 100%);
+    background-repeat: no-repeat;
+    background-position: top, bottom;
+    -webkit-background-size: 100% 1px, 100% 1px;
+    background-size: 100% 1px, 100% 1px;
+    border: none;
+  }
+}
+
+.line-right {
+  border-right: 1px solid var(--Color-Base-Normal1);
+}
+
+@media (-webkit-min-device-pixel-ratio: 2), (min-device-pixel-ratio: 2) {
+  .line-right {
+    background-image: -webkit-gradient(linear, left top, right top, color-stop(50%, transparent), color-stop(50%, var(--Color-Base-Normal1)), color-stop(100%, var(--Color-Base-Normal1)));
+    background-image: -webkit-linear-gradient(left, transparent 50%, var(--Color-Base-Normal1) 50%, var(--Color-Base-Normal1) 100%);
+    background-image: linear-gradient(to right, transparent 50%, var(--Color-Base-Normal1) 50%, var(--Color-Base-Normal1) 100%);
+    background-repeat: no-repeat;
+    background-position: right;
+    background-size: 1px 100%;
+    border: none;
+  }
+}
+
+@media (-webkit-min-device-pixel-ratio: 3), (min-device-pixel-ratio: 3) {
+  .line-right {
+    background-image: -webkit-gradient(linear, left top, right top, color-stop(65%, transparent), color-stop(65%, var(--Color-Base-Normal1)), color-stop(100%, var(--Color-Base-Normal1)));
+    background-image: -webkit-linear-gradient(left, transparent 65%, var(--Color-Base-Normal1) 65%, var(--Color-Base-Normal1) 100%);
+    background-image: linear-gradient(to right, transparent 65%, var(--Color-Base-Normal1) 65%, var(--Color-Base-Normal1) 100%);
+    background-repeat: no-repeat;
+    background-position: right;
+    background-size: 1px 100%;
+    border: none;
+  }
+}
+
+.line-left {
+  border-left: 1px solid var(--Color-d8e2e9);
+}
+
+@media (-webkit-min-device-pixel-ratio: 2), (min-device-pixel-ratio: 2) {
+  .line-left {
+    background-image: -webkit-gradient(linear, left top, right top, color-stop(0%, var(--Color-d8e2e9)), color-stop(50%, var(--Color-d8e2e9)), color-stop(50%, transparent));
+    background-image: -webkit-linear-gradient(left, var(--Color-d8e2e9) 0, var(--Color-d8e2e9) 50%, transparent 50%);
+    background-image: linear-gradient(to right, var(--Color-d8e2e9) 0, var(--Color-d8e2e9) 50%, transparent 50%);
+    background-repeat: no-repeat;
+    background-position: left;
+    background-size: 1px 100%;
+    border: none;
+  }
+}
+
+@media (-webkit-min-device-pixel-ratio: 3), (min-device-pixel-ratio: 3) {
+  .line-left {
+    background-image: -webkit-gradient(linear, left top, right top, color-stop(33%, var(--Color-d8e2e9)), color-stop(33%, var(--Color-d8e2e9)), color-stop(33%, transparent));
+    background-image: -webkit-linear-gradient(left, var(--Color-d8e2e9) 33%, var(--Color-d8e2e9) 33%, transparent 33%);
+    background-image: linear-gradient(to right, var(--Color-d8e2e9) 33%, var(--Color-d8e2e9) 33%, transparent 33%);
+    background-repeat: no-repeat;
+    background-position: left;
+    background-size: 1px 100%;
+    border: none;
+  }
+}
+
+.line-top {
+  border-top: 1px solid var(--Color-d8e2e9);
+}
+
+@media (-webkit-min-device-pixel-ratio: 2), (min-device-pixel-ratio: 2) {
+  .line-top {
+    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, var(--Color-d8e2e9)), color-stop(50%, var(--Color-d8e2e9)), color-stop(50%, transparent));
+    background-image: -webkit-linear-gradient(top, var(--Color-d8e2e9) 0, var(--Color-d8e2e9) 50%, transparent 50%);
+    background-image: linear-gradient(to bottom, var(--Color-d8e2e9) 0, var(--Color-d8e2e9) 50%, transparent 50%);
+    background-repeat: no-repeat;
+    background-position: top;
+    -webkit-background-size: 100% 1px;
+    background-size: 100% 1px;
+    border: none;
+  }
+}
+
+@media (-webkit-min-device-pixel-ratio: 3), (min-device-pixel-ratio: 3) {
+  .line-top {
+    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, var(--Color-d8e2e9)), color-stop(33%, var(--Color-d8e2e9)), color-stop(33%, transparent));
+    background-image: -webkit-linear-gradient(top, var(--Color-d8e2e9) 0, var(--Color-d8e2e9) 33%, transparent 33%);
+    background-image: linear-gradient(to bottom, var(--Color-d8e2e9) 0, var(--Color-d8e2e9) 33%, transparent 33%);
+    background-repeat: no-repeat;
+    background-position: top;
+    -webkit-background-size: 100% 1px;
+    background-size: 100% 1px;
+    border: none;
+  }
+}
+
+.line-bottom {
+  border-bottom: 1px solid var(--Color-d8e2e9);
+}
+
+@media (-webkit-min-device-pixel-ratio: 2), (min-device-pixel-ratio: 2) {
+  .line-bottom {
+    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(50%, transparent), color-stop(50%, transparent), color-stop(100%, var(--Color-d8e2e9)));
+    background-image: -webkit-linear-gradient(top, transparent 50%, var(--Color-d8e2e9) 50%, var(--Color-d8e2e9) 100%);
+    background-image: linear-gradient(to bottom, transparent 50%, var(--Color-d8e2e9) 50%, var(--Color-d8e2e9) 100%);
+    background-repeat: no-repeat;
+    background-position: bottom;
+    background-size: 100% 1px;
+    border: none;
+  }
+}
+
+@media (-webkit-min-device-pixel-ratio: 3), (min-device-pixel-ratio: 3) {
+  .line-bottom {
+    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(65%, transparent), color-stop(65%, transparent), color-stop(100%, var(--Color-d8e2e9)));
+    background-image: -webkit-linear-gradient(top, transparent 65%, var(--Color-d8e2e9) 65%, var(--Color-d8e2e9) 100%);
+    background-image: linear-gradient(to bottom, transparent 65%, var(--Color-d8e2e9) 65%, var(--Color-d8e2e9) 100%);
+    background-repeat: no-repeat;
+    background-position: bottom;
+    background-size: 100% 1px;
+    border: none;
+  }
+}
+
+/* CC加右边半透明线 */
+.Line-Right-White {
+  border-right: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+@media (-webkit-min-device-pixel-ratio: 2) {
+  .Line-Right-White {
+    background-image: -webkit-gradient(linear, left top, right top, color-stop(50%, transparent), color-stop(50%, rgba(255, 255, 255, 0.5)), color-stop(100%, rgba(255, 255, 255, 0.5)));
+    background-image: -webkit-linear-gradient(left, transparent 50%, rgba(255, 255, 255, 0.5) 50%, rgba(255, 255, 255, 0.5) 100%);
+    background-image: linear-gradient(to right, transparent 50%, rgba(255, 255, 255, 0.5) 50%, rgba(255, 255, 255, 0.5) 100%);
+    background-repeat: no-repeat;
+    background-position: right;
+    background-size: 1px 100%;
+    border: none;
+  }
+}
+
+@media (-webkit-min-device-pixel-ratio: 3) {
+  .Line-Right-White {
+    background-image: -webkit-gradient(linear, left top, right top, color-stop(65%, transparent), color-stop(65%, rgba(255, 255, 255, 0.5)), color-stop(100%, rgba(255, 255, 255, 0.5)));
+    background-image: -webkit-linear-gradient(left, transparent 65%, rgba(255, 255, 255, 0.5) 65%, rgba(255, 255, 255, 0.5) 100%);
+    background-image: linear-gradient(to right, transparent 65%, rgba(255, 255, 255, 0.5) 65%, rgba(255, 255, 255, 0.5) 100%);
+    background-repeat: no-repeat;
+    background-position: right;
+    background-size: 1px 100%;
+    border: none;
+  }
+}
+
+/* HUYC加右边 #C1C9CF 线 */
+.Line-Right-C1C9CF {
+  border-right: 1px solid var(--Color-Base-Normal3);
+}
+
+@media (-webkit-min-device-pixel-ratio: 2), (min-device-pixel-ratio: 2) {
+  .Line-Right-C1C9CF {
+    background-image: -webkit-gradient(linear, left top, right top, color-stop(50%, transparent), color-stop(50%, var(--Color-Base-Normal3)), color-stop(100%, var(--Color-Base-Normal3)));
+    background-image: -webkit-linear-gradient(left, transparent 50%, var(--Color-Base-Normal3) 50%, var(--Color-Base-Normal3) 100%);
+    background-image: linear-gradient(to right, transparent 50%, var(--Color-Base-Normal3) 50%, var(--Color-Base-Normal3) 100%);
+    background-repeat: no-repeat;
+    background-position: right;
+    background-size: 1px 100%;
+    border: none;
+  }
+}
+
+@media (-webkit-min-device-pixel-ratio: 3), (min-device-pixel-ratio: 3) {
+  .Line-Right-C1C9CF {
+    background-image: -webkit-gradient(linear, left top, right top, color-stop(65%, transparent), color-stop(65%, var(--Color-Base-Normal3)), color-stop(100%, var(--Color-Base-Normal3)));
+    background-image: -webkit-linear-gradient(left, transparent 65%, var(--Color-Base-Normal3) 65%, var(--Color-Base-Normal3) 100%);
+    background-image: linear-gradient(to right, transparent 65%, var(--Color-Base-Normal3) 65%, var(--Color-Base-Normal3) 100%);
+    background-repeat: no-repeat;
+    background-position: right;
+    background-size: 1px 100%;
+    border: none;
+  }
+}
+
+.Line-TopBottom-C1C9CF {
+  border: 1px solid var(--Color-Base-Normal3);
+}
+
+@media (-webkit-min-device-pixel-ratio: 2), (min-device-pixel-ratio: 2) {
+  .Line-TopBottom-C1C9CF {
+    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, var(--Color-Base-Normal3)), color-stop(50%, var(--Color-Base-Normal3)), color-stop(50%, transparent)), -webkit-gradient(linear, left top, right top, color-stop(50%, transparent), color-stop(50%, var(--Color-Base-Normal3)), color-stop(100%, var(--Color-Base-Normal3))), -webkit-gradient(linear, left top, left bottom, color-stop(50%, transparent), color-stop(50%, transparent), color-stop(100%, var(--Color-Base-Normal3))), -webkit-gradient(linear, left top, right top, color-stop(0%, var(--Color-Base-Normal3)), color-stop(50%, var(--Color-Base-Normal3)), color-stop(50%, transparent));
+    background-image: -webkit-linear-gradient(top, var(--Color-Base-Normal3) 0, var(--Color-Base-Normal3) 50%, transparent 50%), -webkit-linear-gradient(top, transparent 50%, var(--Color-Base-Normal3) 50%, var(--Color-Base-Normal3) 100%);
+    background-image: linear-gradient(to bottom, var(--Color-Base-Normal3) 0, var(--Color-Base-Normal3) 50%, transparent 50%), linear-gradient(to bottom, transparent 50%, var(--Color-Base-Normal3) 50%, var(--Color-Base-Normal3) 100%);
+    background-repeat: no-repeat;
+    background-position: top, bottom;
+    -webkit-background-size: 100% 1px, 100% 1px;
+    background-size: 100% 1px, 100% 1px;
+    border: none;
+  }
+}
+
+@media (-webkit-min-device-pixel-ratio: 3), (min-device-pixel-ratio: 3) {
+  .Line-TopBottom-C1C9CF {
+    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, var(--Color-Base-Normal3)), color-stop(65%, var(--Color-Base-Normal3)), color-stop(65%, transparent)), -webkit-gradient(linear, left top, right top, color-stop(65%, transparent), color-stop(65%, var(--Color-Base-Normal3)), color-stop(100%, var(--Color-Base-Normal3))), -webkit-gradient(linear, left top, left bottom, color-stop(65%, transparent), color-stop(65%, transparent), color-stop(100%, var(--Color-Base-Normal3))), -webkit-gradient(linear, left top, right top, color-stop(0%, var(--Color-Base-Normal3)), color-stop(65%, var(--Color-Base-Normal3)), color-stop(65%, transparent));
+    background-image: -webkit-linear-gradient(top, var(--Color-Base-Normal3) 0, var(--Color-Base-Normal3) 33%, transparent 33%), -webkit-linear-gradient(top, transparent 65%, var(--Color-Base-Normal3) 65%, var(--Color-Base-Normal3) 100%);
+    background-image: linear-gradient(to bottom, var(--Color-Base-Normal3) 0, var(--Color-Base-Normal3) 33%, transparent 33%), linear-gradient(to bottom, transparent 65%, var(--Color-Base-Normal3) 65%, var(--Color-Base-Normal3) 100%);
+    background-repeat: no-repeat;
+    background-position: top, bottom;
+    -webkit-background-size: 100% 1px, 100% 1px;
+    background-size: 100% 1px, 100% 1px;
+    border: none;
+  }
+}
+
+/* YJJ加下边半透明线 */
+.Line-Bottom-White {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+@media (-webkit-min-device-pixel-ratio: 2), (min-device-pixel-ratio: 2) {
+  .Line-Bottom-White {
+    border: none;
+    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(50%, transparent), color-stop(50%, transparent), color-stop(100%, rgba(255, 255, 255, 0.5)));
+    background-image: -webkit-linear-gradient(top, transparent 50%, rgba(255, 255, 255, 0.5) 50%, rgba(255, 255, 255, 0.5) 100%);
+    background-image: linear-gradient(to bottom, transparent 50%, rgba(255, 255, 255, 0.5) 50%, rgba(255, 255, 255, 0.5) 100%);
+    background-size: 100% 1px;
+    background-repeat: no-repeat;
+    background-position: bottom;
+  }
+}
+
+@media (-webkit-min-device-pixel-ratio: 3), (min-device-pixel-ratio: 3) {
+  .Line-Bottom-White {
+    border: none;
+    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(65%, transparent), color-stop(65%, transparent), color-stop(100%, rgba(255, 255, 255, 0.5)));
+    background-image: -webkit-linear-gradient(top, transparent 65%, rgba(255, 255, 255, 0.5) 65%, rgba(255, 255, 255, 0.5) 100%);
+    background-image: linear-gradient(to bottom, transparent 65%, rgba(255, 255, 255, 0.5) 65%, rgba(255, 255, 255, 0.5) 100%);
+    background-size: 100% 1px;
+    background-repeat: no-repeat;
+    background-position: bottom;
+  }
+}
+
+
