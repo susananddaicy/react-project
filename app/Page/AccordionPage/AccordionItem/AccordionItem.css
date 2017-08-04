@@ -1,0 +1,19 @@
+/* Accordion Item */
+.accordion--item {
+  padding: 10px 15px;
+  border-bottom: 1px solid #ddd;
+  font-size: 14px;
+}
+
+.accordion--item > div {
+  display: flex;
+}
+
+.accordion--item > div > span {
+  flex: 1;
+  line-height: 20px;
+}
+
+.accordion--item > div > span:last-of-type {
+  text-align: right;
+}

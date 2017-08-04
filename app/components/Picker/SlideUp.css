@@ -1,0 +1,51 @@
+.slide-up {
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  -webkit-transition-duration: 200ms;
+  transition-duration: 200ms;
+  transform: translate3d(0, 100%, 0);
+  -webkit-transform: translate3d(0, 100%, 0);
+
+  &.show {
+    transform: translate3d(0, 0, 0);
+    -webkit-transform: translate3d(0, 0, 0);
+  }
+
+  .slide-header {
+    height: 4.5rem;
+    background-color: #edf2f6;
+    position: relative;
+    border-image-width: 0 0 1 0;
+
+    .header-title {
+      text-align: center;
+      line-height: 4.5rem;
+      color: #13334d;
+      font-size: 1.6rem;
+    }
+
+    .header-cacel-btn,
+    .header-confirm-btn {
+      color: #55acee;
+      font-size: 1.5rem;
+      line-height: 4.5rem;
+    }
+
+    .header-cacel-btn {
+      position: absolute;
+      left: 1.5rem;
+      top: 0;
+      bottom: 0;
+      right: auto;
+    }
+
+    .header-confirm-btn {
+      position: absolute;
+      left: auto;
+      top: 0;
+      bottom: 0;
+      right: 1.5rem;
+    }
+  }
+}

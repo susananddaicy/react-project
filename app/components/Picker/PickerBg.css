@@ -1,0 +1,22 @@
+.picker-bg {
+  position: absolute;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  top: 0;
+  list-style: none;
+
+  .picker-bg-item {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+
+    &:first-of-type {
+      padding-left: 0;
+      padding-right: 0;
+    }
+  }
+
+  .picker-bg-item:last-child {
+    border-bottom: 0;
+  }
+}

@@ -1,0 +1,5 @@
+.Picker__content {
+  display: flex;
+  flex-direction: row;
+  position: relative;
+}

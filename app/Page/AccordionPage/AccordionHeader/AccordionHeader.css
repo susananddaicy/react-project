@@ -1,0 +1,38 @@
+/* Accordion Header */
+.accordion-header {
+  display: flex;
+  height: 40px;
+  align-items: center;
+  padding: 0 15px;
+  font-size: 14px;
+  border-bottom: 1px solid #ddd;
+}
+
+.accordion-header span:nth-of-type(2) {
+  flex: 1;
+  margin-left: 10px;
+}
+
+.accordion-header span:last-of-type {
+  color: tomato;
+}
+
+.icon__triangle {
+  display: inline-block;
+  font-size: 13px;
+  width: 1em;
+  height: 1em;
+  will-change: transfrom;
+  transition: transform .23s ease-in-out;
+  margin-right: 10px;
+  fill: #666;
+}
+
+.icon__triangle svg {
+  width: 100%;
+  height: 100%;
+}
+
+.icon__triangle.icon__triangle--down {
+  transform: rotate(90deg);
+}

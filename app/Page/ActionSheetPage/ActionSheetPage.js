@@ -49,7 +49,7 @@ class ActionSheetPage extends Component {
   };
     return (
       <section>
-        <div onClick={this.openSheet} style={{textAlign: 'center', fontSize: '2rem', color: '#fc7946'}}>点我打开ActionSheet</div>
+        <div onClick={this.openSheet} style={{textAlign: 'center', fontSize: '2rem',marginTop: '2rem'}}>点我打开ActionSheet</div>
         <ActionSheet isShow={this.state.isShow} data={data} onRequestClose={this.closeSheet}/>
       </section>
     );
