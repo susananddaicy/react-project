@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import Picker from '../../components/Picker/Picker.js';
+import Mask from '../../components/Mask/Mask.js';
 
 class PickerExample extends Component {
   constructor(props) {
@@ -66,7 +67,8 @@ class PickerExample extends Component {
 
     return (
       <div>
-        <div onClick={this.openPicker} style={{textAlign: 'center', fontSize: '2rem',marginTop: '2rem'}}>点我打开Picker选择器</div>
+        <div onClick={this.openPicker} style={{textAlign: 'center', fontSize: '2rem',padding: '1.5rem', backgroundColor: '#fff'}}>点我打开Picker选择器</div>
+       {pickerShown ? <Mask /> : null}
         <Picker
           title="Picker选择器"
           shown={pickerShown}

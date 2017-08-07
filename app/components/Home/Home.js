@@ -15,7 +15,8 @@ class Home extends Component {
     return (
       <div className="Home">
         <div className="Home-container">
-        <h1>React Components</h1>
+        <p>React Components</p>
+        <p className="desc">移动端组件库</p>     
         <ul>
           <li><Link to="actionSheet">ActionSheet(动作面板)</Link></li>
           <li><Link to="accordion">Accordion(手风琴)</Link></li>    

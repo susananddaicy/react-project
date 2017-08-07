@@ -72,10 +72,6 @@ module.exports= {
         }
       },
       {
-        test: /\.(eot|ttf|wav|mp3|svg|woff|woff2)$/,
-        loader: 'file-loader?name=fonts/[name].demo-react-webpack.[ext]',
-      },
-      {
         test: /\.scss$/,
         loaders: ['style', 'css', 'sass']
       }, 
@@ -95,7 +91,7 @@ module.exports= {
     new webpack.optimize.UglifyJsPlugin({minimize: true}),
     //把入口文件里面的数组打包成verdors.js
     new webpack.optimize.CommonsChunkPlugin('vendors', 'vendors.js'),
-    new ExtractTextPlugin('public/styles/demo.css'), // 把css自动插入到head里
+    new ExtractTextPlugin('public/styles/react-component.css'), // 把css自动插入到head里
     new HtmlwebpackPlugin({ // 会把压缩好的app.js和vendors.js自动插入到html中的body里
       title: 'My first react app',
       template: path.resolve(APP_PATH, 'index.html'),

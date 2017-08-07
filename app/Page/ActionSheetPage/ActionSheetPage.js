@@ -14,11 +14,11 @@ class ActionSheetPage extends Component {
   }
 
   callback1() {
-    console.log('callback1');
+    alert('操作1');
   }
 
   callback2() {
-    console.log('callback2');
+    alert('操作2');
   }
 
   openSheet() {
@@ -41,15 +41,15 @@ class ActionSheetPage extends Component {
   render() {
 
   const data = {
-    title: 'title',
+    title: '标题',
     content: [
-      { text: 'This is content', callback: this.callback1 },
-      { text: 'This is also content', callback: this.callback2 },
+      { text: '操作1', callback: this.callback1 },
+      { text: '操作2', callback: this.callback2 },
     ],
   };
     return (
       <section>
-        <div onClick={this.openSheet} style={{textAlign: 'center', fontSize: '2rem',marginTop: '2rem'}}>点我打开ActionSheet</div>
+        <div onClick={this.openSheet} style={{textAlign: 'center', fontSize: '1.5rem',padding: '2rem', backgroundColor: '#fff'}}>点我打开ActionSheet</div>
         <ActionSheet isShow={this.state.isShow} data={data} onRequestClose={this.closeSheet}/>
       </section>
     );
