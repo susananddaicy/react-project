@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "webpack-dev-server --progress --profile --colors --hot --inline",
     "build": "webpack --progress --profile --colors",
-    "test": "test"
+    "   ": "test"
   },
   "author": "",
   "license": "ISC",
@@ -106,5 +106,5 @@
     "webpack-dev-middleware": "^1.2.0",
     "webpack-hot-middleware": "^2.4.1",
     "yargs": "^4.6.0"
-  },
+  }
 }
