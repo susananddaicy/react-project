@@ -72,6 +72,10 @@ module.exports= {
         }
       },
       {
+        test: /\.(eot|ttf|wav|mp3|svg|woff|woff2)$/,
+        loader: 'file-loader?name=fonts/[name].demo-react-webpack.[ext]',
+      },
+      {
         test: /\.scss$/,
         loaders: ['style', 'css', 'sass']
       }, 
