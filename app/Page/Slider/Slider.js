@@ -27,8 +27,8 @@ class Slider extends Component {
 
 
     const SliderDomArr = [
-      <div key="pane1"><img src={require('./2.pic_hd.jpg')} /></div>,
-      <div key="pane2"><img src={require('./3.pic_hd.jpg')} /></div>,
+      <div key="pane1"><img src={require('./1.pic.jpg')} /></div>,
+      <div key="pane2"><img src={require('./2.pic.jpg')} /></div>,
     ];
 
     return (
