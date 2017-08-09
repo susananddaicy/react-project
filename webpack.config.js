@@ -75,6 +75,14 @@ module.exports= {
           presets: ['es2015', 'react']
         }
       },
+       {
+	    test: /\.(png|jpg|jpeg|gif)$/,
+	    loader: 'url-loader?limit=1000&name=images/[name].react.[hash:6].[ext]',
+	  }, 
+      {
+	    test: /\.(eot|ttf|wav|mp3|svg|woff|woff2)$/,
+	    loader: 'file-loader?name=fonts/[name].react.[ext]',
+	  }, 
       {
         test: /\.scss$/,
         loaders: ['style', 'css', 'sass']

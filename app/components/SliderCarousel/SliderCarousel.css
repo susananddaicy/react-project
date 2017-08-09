@@ -1,0 +1,9 @@
+.SliderCarousel {
+  position: relative;
+  left: 0;
+  top: 0;
+
+  .swiper-pagination-bullet-active {
+    background: rgba(255,255,255,0.5);
+  }
+}
