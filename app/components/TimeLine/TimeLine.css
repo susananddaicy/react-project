@@ -1,0 +1,55 @@
+.TimeLine {
+  &-box {
+    position: relative;
+    padding-left: 3.4rem;
+    padding-bottom: 1.8rem;
+  }
+
+  &-box::before,
+  &-box::after {
+    content: "";
+    position: absolute;
+    top: 0;
+  }
+
+  &-box::before {
+    left: 0.6rem;
+    height: 100%;
+    width: 0.1rem;
+    background: currentColor;
+  }
+
+  &-box::after {
+    left: 0;
+    width: 1.3rem;
+    height: 1.3rem;
+    border-radius: 50%;
+    background: currentColor;
+  }
+
+  &-title {
+    line-height: 1.4rem;
+  }
+
+  &-desc {
+    margin-top: 0.2rem;
+    font-size: 1.3rem;
+    line-height: 1.8rem;
+  }
+}
+
+.TimeLine-fail {
+  color: #d8e2e9;
+
+  .TimeLine-title {
+    color: #9dacb6;
+  }
+
+  .TimeLine-desc {
+    color: #697d91;
+  }
+}
+
+.TimeLine-success {
+  color: #55acee;
+}

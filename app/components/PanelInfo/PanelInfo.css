@@ -1,0 +1,23 @@
+.PanelInfo {
+  background-color: #fff;
+  padding: 1.5rem;
+
+  li {
+    font-size: 1.3rem;
+    line-height: 1.85rem;
+    margin-bottom: 0.8rem;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  &-label {
+    color: #9dacb6;
+    width: 9.8rem;
+  }
+
+  &-text {
+    color: #697d91;
+  }
+}

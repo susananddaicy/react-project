@@ -21,9 +21,12 @@ class Home extends Component {
           <li><Link to="actionSheet">ActionSheet(动作面板)</Link></li>
           <li><Link to="accordion">Accordion(手风琴)</Link></li>    
           <li><Link to="picker">Picker(选择器)</Link></li>
-          <li><Link to="swiper">Swiper(轮播)</Link></li>                 
+          <li><Link to="swiper">Swiper(轮播)</Link></li>   
+          <li><Link to="timeLine">TimeLine(时间轴)</Link></li>         
+          <li><Link to="panel">Panel(面板)</Link></li>                   
         </ul>
         </div>
+        <p className="my"><Link to="my">我的简历</Link></p>
       </div>
     );
   }

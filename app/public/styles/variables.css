@@ -1,12 +1,4 @@
 :root {
-
-  /*
-   * Font Family
-   * ======================================================================== */
-  --LUUIFontFamily: 'Arial', 'Microsoft YaHei', Helvetica, sans-serif;
-  --LUUIFontCondensedFamily: 'Arial Narrow', HelveticaNeue-CondensedBold, var(--LUUIFontFamily);
-  --LUUIFontIconFamily: 'lufont';
-
   /*
    * Font Size
    * ======================================================================== */
