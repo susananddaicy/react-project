@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import PanelInfo from '../../components/PanelInfo/PanelInfo.js';
 import TimeLine from '../../components/TimeLine/TimeLine.js';
-import classNames from 'classNames';
+import classNames from 'classnames';
 import Mydata from './My.js';
 import './MyPage.css';
 
