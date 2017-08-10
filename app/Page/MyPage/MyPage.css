@@ -1,0 +1,95 @@
+.MyBrief { 
+  padding: 1.5rem 0rem 0rem 1.5rem;
+  background-color: #fff;
+  margin-bottom: 1rem;
+  &-Text {
+    height: 2rem;
+    background-color: #fff;
+    font-size: 1.5rem;
+    line-height: 2rem;
+    padding-left: 1.5rem;
+    border-left: 0.4rem solid #5c6bc2;
+    margin-bottom: 1rem;
+  }   
+  &-BaseInfo {
+    padding-bottom: 1.5rem;
+    background-color: #fff;
+    .Name {
+      font-size: 3rem;
+    }
+    span {
+      font-size: 1.5rem;
+    }
+    .Job , .Sex , .Age, .Address {
+      padding-right: 0.5rem;
+    }
+    .Company, .Age, .Address, .Years {
+      padding-left: 0.5rem;
+    }
+  }
+}
+.WorkExprise {
+  padding: 1.5rem 0rem 0rem 1.5rem;
+  background-color: #fff;
+  margin-bottom: 1rem;   
+  &-Text {
+    height: 2rem;
+    background-color: #fff;
+    font-size: 1.5rem;
+    line-height: 2rem;
+    padding-left: 1.5rem;
+    border-left: 0.4rem solid #5c6bc2;
+    margin-bottom: 2rem;
+  } 
+}
+.EducationExprise {
+  padding: 1.5rem 0rem 0rem 1.5rem;
+  background-color: #fff;
+  margin-bottom: 1rem;   
+  &-Text {
+    height: 2rem;
+    background-color: #fff;
+    font-size: 1.5rem;
+    line-height: 2rem;
+    padding-left: 1.5rem;
+    border-left: 0.4rem solid #5c6bc2;
+    margin-bottom: 2rem;
+  } 
+}
+.ProjectExprise {
+  padding: 1.5rem 0rem 0rem 1.5rem;
+  background-color: #fff;
+  margin-bottom: 1rem;   
+  &-Text {
+    height: 2rem;
+    background-color: #fff;
+    font-size: 1.5rem;
+    line-height: 2rem;
+    padding-left: 1.5rem;
+    border-left: 0.4rem solid #5c6bc2;
+    margin-bottom: 2rem;
+  } 
+}
+  .nav-pos-init {
+    opacity: 0;
+    transform: translateY(-3rem);
+  }
+
+  .nav-pos-active {
+    opacity: 1;
+    transform: translateY(0);
+  }
+ .MyBrief-Text-fix {
+    height: 3rem;
+    background-color: #fff;
+    font-size: 1.5rem;
+    line-height: 3rem;
+    padding-left: 1.5rem;
+    border-left: 0.4rem solid #5c6bc2;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    width: 100%;
+    transition: all 0.2s ease;
+}

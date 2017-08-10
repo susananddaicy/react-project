@@ -1,6 +1,6 @@
 .PanelInfo {
   background-color: #fff;
-  padding: 1.5rem;
+  padding: 1.5rem 1.5rem 1.5rem 0rem;
 
   li {
     font-size: 1.3rem;
@@ -11,13 +11,7 @@
       margin-bottom: 0;
     }
   }
-
   &-label {
-    color: #9dacb6;
     width: 9.8rem;
-  }
-
-  &-text {
-    color: #697d91;
   }
 }
