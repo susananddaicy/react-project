@@ -29,7 +29,8 @@ module.exports= {
   },
   output: {
     path: BUILD_PATH,
-    filename: '[name].js'
+    filename: '[name].js',
+    //publicPath: '../', // script/href/url(): public-path + url-loader-name
   },
   resolve: {
     extensions: ['', '.js', '.jsx']
@@ -81,7 +82,7 @@ module.exports= {
 	  }, 
       {
 	    test: /\.(eot|ttf|wav|mp3|svg|woff|woff2)$/,
-	    loader: 'file-loader?name=fonts/[name].react.[ext]',
+      loader: 'file-loader?name=/fonts/[name].react.[ext]',//  /font 相对根目录 ，即：http://localhost:8080/font/
 	  }, 
       {
         test: /\.scss$/,

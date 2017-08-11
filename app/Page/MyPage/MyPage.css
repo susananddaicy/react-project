@@ -27,6 +27,10 @@
       padding-left: 0.5rem;
     }
   }
+    .icon-cansee, .icon-cantsee {
+      font-size: 1.5rem;
+      margin-left: 1rem;
+    }
 }
 .WorkExprise {
   padding: 1.5rem 0rem 0rem 1.5rem;
@@ -68,6 +72,24 @@
     padding-left: 1.5rem;
     border-left: 0.4rem solid #5c6bc2;
     margin-bottom: 2rem;
+  } 
+}
+.myselfTalk {
+  padding: 1.5rem 0rem 0rem 1.5rem;
+  background-color: #fff;
+  margin-bottom: 1rem;   
+  &-Text {
+    height: 2rem;
+    background-color: #fff;
+    font-size: 1.5rem;
+    line-height: 2rem;
+    padding-left: 1.5rem;
+    border-left: 0.4rem solid #5c6bc2;
+    margin-bottom: 1rem;
+  }
+  .content {
+    font-size: 1.5rem;
+    padding-bottom: 1rem;
   } 
 }
   .nav-pos-init {

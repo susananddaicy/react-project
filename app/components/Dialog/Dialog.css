@@ -1,0 +1,32 @@
+.Dialog {
+  &-body {
+    position: fixed;
+    width: 27.0rem;
+    z-index: 12;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    border-radius: 0.5rem;
+    background-color: #fff;
+  }
+
+  &-text {
+    font-size: 1.5rem;
+    color: #13334d;
+    line-height: 2.4rem;
+    padding: 1.8rem 1.5rem;
+
+    &-title {
+      font-size: 1.8rem;
+      margin-bottom: 0.6rem;
+    }
+  }
+
+  &-btns {
+    color: #55acee;
+    font-size: 1.8rem;
+    height: 4.4rem;
+    line-height: 4.4rem;
+  }
+}

@@ -10,9 +10,9 @@ class MyPage extends Component {
     super(props);
     this.state = {
       showNavClassName: 'nav-pos-init',
-      fixName: '基本信息',
+      isHide: false,
     };
-    ['onscrollFn'].forEach((method) => {
+    ['onscrollFn', 'clickHide'].forEach((method) => {
       this[method] = this[method].bind(this);
     });  
   }
@@ -24,6 +24,12 @@ class MyPage extends Component {
  componentWillUnmount() {
    document.removeEventListener('scroll', this.onscrollFn);
  }
+
+  clickHide() {
+    this.setState({
+      isHide: !this.state.isHide,
+    });
+  }
 
   onscrollFn(ev) {
     const afterScrollTop = document.body.scrollTop;
@@ -37,41 +43,21 @@ class MyPage extends Component {
     this.beforeScrollTop = afterScrollTop;
     const navDom = document.getElementsByClassName('MyBrief-Text');
     const client = navDom[0].getBoundingClientRect();
-    const navDom1 = document.getElementsByClassName('WorkExprise-Text');  
-    const client1 = navDom1[0].getBoundingClientRect();
-
     if (delta < 0) { // page up
-      if (client1.bottom > 0) {
-        if (client.bottom < 0) {
-          this.setState({
-            fixName:  '基本信息',
-            showNavClassName: 'nav-pos-active', 
-          });
-        } else {
-          this.setState({
-            fixName:  '工作经历', 
-            showNavClassName: 'nav-pos-init',
-          });
-        }
+      if (client.bottom > 0) {
+        this.setState({
+          showNavClassName: 'nav-pos-init',
+        });
       }
     } else { // page down
       if (client.bottom <= 0) {
-        if (client1.bottom <= 0) {
-          this.setState({
-            fixName:  '工作经历',
-            showNavClassName: 'nav-pos-active', 
-          });
-          } else {
-          this.setState({
-            fixName:  '基本信息', 
-            showNavClassName: 'nav-pos-active',
-          });
-          }
+        this.setState({
+          showNavClassName: 'nav-pos-active',
+        });
       }
     }
     ev.preventDefault();
   }
-
 
   render() {
     const panelData = [
@@ -83,37 +69,47 @@ class MyPage extends Component {
     const panelinfoHtml = <PanelInfo body={panelData} hideBottomLine />;
 
     return (
-      <div>
-        <section className="MyBrief">
-          <p className="MyBrief-Text">基本信息</p> 
+      <div className="myResume">
+        <div className="MyBrief">
+          <p className="MyBrief-Text">基本信息
+            {
+              this.state.isHide ? (
+                <i className="lufont icon-cansee" onClick={this.clickHide}></i>
+              ) :  <i className="lufont icon-cantsee" onClick={this.clickHide}></i>
+            }
+            </p> 
           <div className="MyBrief-BaseInfo line-bottom">
-            <p className="Name">{Mydata.BaseInfo.name}</p>
-            <span className="Job line-right">{Mydata.BaseInfo.job}</span>
-            <span className="Company">{Mydata.BaseInfo.company}</span> 
+            <p className="Name">{this.state.isHide ? '***' : Mydata.BaseInfo.name}</p>
+            <span className="Job line-right">{this.state.isHide ? '***' : Mydata.BaseInfo.job}</span>
+            <span className="Company">{this.state.isHide ? '***' : Mydata.BaseInfo.company}</span> 
             <p>
-              <span className="Sex line-right">{Mydata.BaseInfo.sex}</span>
-              <span className="Age line-right">{Mydata.BaseInfo.age}</span> 
-              <span className="Address line-right">{Mydata.BaseInfo.address}</span>
-              <span className="Years">{Mydata.BaseInfo.workYears}</span>                                  
+              <span className="Sex line-right">{this.state.isHide ? '***' : Mydata.BaseInfo.sex}</span>
+              <span className="Age line-right">{this.state.isHide ? '***' : Mydata.BaseInfo.age}</span> 
+              <span className="Address line-right">{this.state.isHide ? '***' : Mydata.BaseInfo.address}</span>
+              <span className="Years">{this.state.isHide ? '***' : Mydata.BaseInfo.workYears}</span>                                  
             </p>         
           </div>
           {panelinfoHtml}
-        </section>
-        <section className="WorkExprise">
+        </div>
+        <div className="WorkExprise">
           <p className="WorkExprise-Text">工作经历</p> 
           <TimeLine itemData={Mydata.WorkData} />
-        </section>
-         <section className="EducationExprise">
+        </div>
+         <div className="EducationExprise">
           <p className="EducationExprise-Text">教育经历</p> 
           <TimeLine itemData={Mydata.EducationData} />
-        </section> 
-        <section className="ProjectExprise">
+        </div> 
+        <div className="ProjectExprise">
           <p className="ProjectExprise-Text">项目经验</p> 
           <TimeLine itemData={Mydata.ProjectData} />
-        </section>        
+        </div>        
         <div className={classNames('MyBrief-Text-fix', 'line-bottom', this.state.showNavClassName)}>
-          {this.state.fixName}
-        </div>              
+          基本信息
+        </div>  
+        <div className="myselfTalk">
+          <p className="myselfTalk-Text">掌握的技能</p> 
+          <div className="content">Html5,React,ES6,Webpack,Eslint,Node,Hybrid</div>
+        </div>                    
       </div>
     );
   }
