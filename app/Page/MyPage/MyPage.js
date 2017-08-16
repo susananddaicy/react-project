@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import PanelInfo from '../../components/PanelInfo/PanelInfo.js';
 import TimeLine from '../../components/TimeLine/TimeLine.js';
+import Dialog from '../../components/Dialog/Dialog.js';
 import classNames from 'classnames';
 import Mydata from './My.js';
 import './MyPage.css';
@@ -11,19 +12,20 @@ class MyPage extends Component {
     this.state = {
       showNavClassName: 'nav-pos-init',
       isHide: false,
+      dialogProps: null,
     };
-    ['onscrollFn', 'clickHide'].forEach((method) => {
+    ['onscrollFn', 'clickHide', 'clickIcon', 'showDialog'].forEach((method) => {
       this[method] = this[method].bind(this);
     });  
   }
 
-  componentWillMount() {
-    document.addEventListener('scroll', this.onscrollFn);
+  componentDidMount() {
+      document.addEventListener('scroll', this.onscrollFn);
   }
 
- componentWillUnmount() {
-   document.removeEventListener('scroll', this.onscrollFn);
- }
+  componentWillUnmount() {
+    document.removeEventListener('scroll', this.onscrollFn);
+  }
 
   clickHide() {
     this.setState({
@@ -59,6 +61,26 @@ class MyPage extends Component {
     ev.preventDefault();
   }
 
+  clickIcon(content) {
+    this.showDialog({
+      text: content,
+      buttons: [{
+        label: '知道了',
+        onClick: () => {
+          this.setState({
+            dialogProps: null,
+          });
+        },
+      }],
+    });
+  }
+
+  showDialog(content) {
+    this.setState({
+      dialogProps: content,
+    });
+  }
+
   render() {
     const panelData = [
       { label: '电子邮件', text: Mydata.BaseInfo.email },
@@ -67,7 +89,11 @@ class MyPage extends Component {
       { label: '工作岗位', text: Mydata.BaseInfo.job},    
     ];
     const panelinfoHtml = <PanelInfo body={panelData} hideBottomLine />;
-
+    const workData = Mydata.WorkData;
+    workData.forEach((i)=> {
+      i.clickIcon = () => this.clickIcon(i.iconDesc);
+    });
+  
     return (
       <div className="myResume">
         <div className="MyBrief">
@@ -93,7 +119,7 @@ class MyPage extends Component {
         </div>
         <div className="WorkExprise">
           <p className="WorkExprise-Text">工作经历</p> 
-          <TimeLine itemData={Mydata.WorkData} />
+          <TimeLine itemData={workData} />
         </div>
          <div className="EducationExprise">
           <p className="EducationExprise-Text">教育经历</p> 
@@ -109,7 +135,8 @@ class MyPage extends Component {
         <div className="myselfTalk">
           <p className="myselfTalk-Text">掌握的技能</p> 
           <div className="content">Html5,React,ES6,Webpack,Eslint,Node,Hybrid</div>
-        </div>                    
+        </div>     
+        {this.state.dialogProps ? <Dialog options={this.state.dialogProps} /> : null}                
       </div>
     );
   }

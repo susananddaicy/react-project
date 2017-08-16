@@ -6,4 +6,5 @@ class CommonPage extends Component {
     this.state = {
     };
   }
+ 
 }

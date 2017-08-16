@@ -36,6 +36,12 @@
     font-size: 1.3rem;
     line-height: 1.8rem;
   }
+  .icon-question {
+    color: #c1c9Cf;
+    display: inline-block;
+    margin-top: -0.3rem;
+    margin-left: 0.5rem;
+  }
 }
 
 .TimeLine-fail {

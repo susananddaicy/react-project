@@ -1,23 +1,42 @@
 import React, {
+  Component,
   PropTypes,
 }
 from 'react';
 import './TimeLine.css';
 
-function TimeLine(props) {
-  let li = props.itemData ? props.itemData.map((item, index) => {
-    let isSucess = item.success ? 'TimeLine-box TimeLine-success' : 'TimeLine-box TimeLine-fail';
-    return (
-      <li className={isSucess} key={index} >
-        <p className="TimeLine-title" >{item.title}</p>
-        <div className="TimeLine-desc">{item.desc}</div>
-      </li>
-      );
-  }) : null;
+class TimeLine extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+    };
+  }
 
-  return (
-    <ul className="TimeLine" >{li}</ul>
-  );
+  render () {
+    let li = this.props.itemData ? this.props.itemData.map((item, index) => {
+      let isSucess = item.success ? 'TimeLine-box TimeLine-success' : 'TimeLine-box TimeLine-fail';
+      return (
+        <li className={isSucess} key={index} >
+          <p className="TimeLine-title" >
+            {item.title}
+          </p>
+          <div className="TimeLine-desc">
+            {item.desc}
+            {
+              item.hasIcon ? (
+                <i className="lufont icon-question" onClick={item.clickIcon}></i>
+              ) : null
+            }
+          </div>
+        </li>
+        );
+    }) : null;
+
+    return (
+      <ul className="TimeLine" >{li}</ul>
+    );
+  }
+
 }
 
 TimeLine.propTypes = {
