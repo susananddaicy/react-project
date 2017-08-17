@@ -5,10 +5,32 @@ import { Link } from 'react-router';
 class Home extends Component {
   constructor(props) {
     super(props);
+    this.state = {
+      val: 1,
+    };
   }
 
-  componentWillMount() {
+  componentDidMount() {
+    this.setState({
+      val: this.state.val + 1,
+    });
+    console.log(this.state.val);
+    this.setState({
+      val: this.state.val + 1,
+    });
+    console.log(this.state.val);  
 
+    setTimeout(() => {
+      this.setState({
+        val: this.state.val + 1,
+      });
+      console.log(this.state.val);
+      this.setState({
+        val: this.state.val + 1,
+      });
+      console.log(this.state.val);
+
+    },0); 
   }
 
   render() {
@@ -26,7 +48,7 @@ class Home extends Component {
           <li><Link to="panel">Panel(面板)</Link></li>                   
         </ul>
         </div>
-        <p className="my"><Link to="my">我的简历</Link></p>
+       {/*  <p className="my"><Link to="my">我的简历</Link></p> */}
       </div>
     );
   }

@@ -20,7 +20,7 @@ class MyPage extends Component {
   }
 
   componentDidMount() {
-      document.addEventListener('scroll', this.onscrollFn);
+    document.addEventListener('scroll', this.onscrollFn);
   }
 
   componentWillUnmount() {
