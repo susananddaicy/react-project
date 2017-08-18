@@ -1,0 +1,57 @@
+
+.VipSwiper {
+  height: 4rem;
+  background-color: #fff;
+  align-items: center;
+  padding: 0 1.5rem;
+
+ &__title {
+   font-size: 1.5rem;
+   margin-right: 1rem;
+ }
+
+  &__icon {
+    padding-right: 0.5rem;
+
+    img {
+      width: 5rem;
+    }
+  }
+
+  &__swiper {
+    height: 100%;
+    overflow: hidden;
+  }
+
+  &__item {
+    font-size: 1.3rem;
+    color: #13334d;
+    align-items: center;
+  }
+
+  &__title {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  &__more {
+    font-size: 1.1rem;
+    color: #697d91;
+    padding-left: 1rem;
+    margin-left: 1rem;
+    border-style: none none none solid;
+    border-image-width: 0 0 0 1;
+
+    > span {
+      vertical-align: middle;
+    }
+
+    .icon-arrowright {
+      font-size: 1.2rem;
+      vertical-align: middle;
+      margin-left: 0.5rem;
+      color: #697d91;
+    }
+  }
+}

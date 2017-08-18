@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import PanelInfo from '../../components/PanelInfo/PanelInfo.js';
 import TimeLine from '../../components/TimeLine/TimeLine.js';
 import Dialog from '../../components/Dialog/Dialog.js';
+import VipSwiper from './VipSwiper/VipSwiper.js'
 import classNames from 'classnames';
 import Mydata from './My.js';
 import './MyPage.css';
@@ -93,7 +94,20 @@ class MyPage extends Component {
     workData.forEach((i)=> {
       i.clickIcon = () => this.clickIcon(i.iconDesc);
     });
-  
+    const swiperData = [{
+			"showTitle": "React框架",
+		}, {
+			"showTitle": "Webpack打包",
+		}, {
+			"showTitle": "ES6语法",
+    },{
+			"showTitle": "Html5",
+		}, {
+			"showTitle": "Hybrid",
+		}, {
+			"showTitle": "CSS3",
+    }];
+    
     return (
       <div className="myResume">
         <div className="MyBrief">
@@ -132,6 +146,10 @@ class MyPage extends Component {
         <div className={classNames('MyBrief-Text-fix', 'line-bottom', this.state.showNavClassName)}>
           基本信息
         </div>  
+        <VipSwiper
+          items = {swiperData}
+          title = {"掌握的技能："}
+        />
         <div className="myselfTalk">
           <p className="myselfTalk-Text">掌握的技能</p> 
           <div className="content">Html5,React,ES6,Webpack,Eslint,Node,Hybrid</div>

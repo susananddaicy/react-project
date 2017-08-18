@@ -11,6 +11,7 @@ class Home extends Component {
   }
 
   componentDidMount() {
+    // isBatchingUpdates为true,2次setState没有生效，放在了dirtyComponents
     this.setState({
       val: this.state.val + 1,
     });
@@ -20,6 +21,7 @@ class Home extends Component {
     });
     console.log(this.state.val);  
 
+    // 执行上下文改变，没有前置的batchedUpdate调用，isBatchingUpdates为false，导致新的state立马生效
     setTimeout(() => {
       this.setState({
         val: this.state.val + 1,
@@ -30,7 +32,22 @@ class Home extends Component {
       });
       console.log(this.state.val);
 
-    },0); 
+    },0);  
+
+/*     this.setState({
+      val: this.state.val + 1,
+    }, ()=> {
+      console.log(this.state.val); // 2
+    }); */
+
+// 关于setTimeout，执行时间有个概念叫最小时间粒度，每次间隔也不可能是0（即使你设置为0），
+// 浏览器会自动配置一个最小间隔时间，这个时间就叫最小时间粒度，不同浏览器这个时间大小也不同。
+//
+//
+//http://www.ruanyifeng.com/blog/2014/10/event-loop.html
+// http://javascript.ruanyifeng.com/advanced/timer.html
+
+
   }
 
   render() {
