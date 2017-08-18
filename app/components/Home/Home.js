@@ -65,7 +65,7 @@ class Home extends Component {
           <li><Link to="panel">Panel(面板)</Link></li>                   
         </ul>
         </div>
-       {/*  <p className="my"><Link to="my">我的简历</Link></p> */}
+        <p className="my"><Link to="my">我的简历</Link></p> 
       </div>
     );
   }
