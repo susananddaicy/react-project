@@ -1,1 +1,3 @@
-# webpack-react-demo
+react-project
+
+React+webpack1
