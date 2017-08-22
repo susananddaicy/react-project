@@ -3,17 +3,17 @@ import PanelInfo from '../../components/PanelInfo/PanelInfo.js';
 import TimeLine from '../../components/TimeLine/TimeLine.js';
 import Dialog from '../../components/Dialog/Dialog.js';
 import VipSwiper from './VipSwiper/VipSwiper.js'
+import Page from '../../components/Page/Page.js'
 import classNames from 'classnames';
 import Mydata from './My.js';
 import './MyPage.css';
 
-class MyPage extends Component {
+class MyPage extends Page {
   constructor(props) {
     super(props);
     this.state = {
       showNavClassName: 'nav-pos-init',
       isHide: false,
-      dialogProps: null,
     };
     ['onscrollFn', 'clickHide', 'clickIcon', 'showDialog'].forEach((method) => {
       this[method] = this[method].bind(this);
@@ -22,7 +22,7 @@ class MyPage extends Component {
 
   componentDidMount() {
     document.addEventListener('scroll', this.onscrollFn);
-  }
+  } 
 
   componentWillUnmount() {
     document.removeEventListener('scroll', this.onscrollFn);
@@ -68,19 +68,12 @@ class MyPage extends Component {
       buttons: [{
         label: '知道了',
         onClick: () => {
-          this.setState({
-            dialogProps: null,
-          });
+          this.hideDialog();
         },
       }],
     });
   }
 
-  showDialog(content) {
-    this.setState({
-      dialogProps: content,
-    });
-  }
 
   render() {
     const panelData = [
@@ -153,8 +146,7 @@ class MyPage extends Component {
         <div className="myselfTalk">
           <p className="myselfTalk-Text">掌握的技能</p> 
           <div className="content">Html5,React,ES6,Webpack,Eslint,Node,Hybrid</div>
-        </div>     
-        {this.state.dialogProps ? <Dialog options={this.state.dialogProps} /> : null}                
+        </div>         
       </div>
     );
   }

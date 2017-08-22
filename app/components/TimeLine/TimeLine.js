@@ -4,6 +4,7 @@ import React, {
 }
 from 'react';
 import './TimeLine.css';
+import _ from 'lodash';
 
 class TimeLine extends Component {
   constructor(props) {
@@ -12,7 +13,15 @@ class TimeLine extends Component {
     };
   }
 
+
+   // 默认返回false
+   //只有经过测量，发现有了shouldComponentUpdate后组件的渲染速度确实有可察觉的提升，你才应该用它。使用shouldComponentUpdate得到的收益一般是微乎其微的。
+  shouldComponentUpdate(nextProps, nextState) {
+    return !_.isEqual(this.props, nextProps) && !_.isEqual(this.state, nextState);
+  }
+
   render () {
+    console.log("TimeLine: Render");
     let li = this.props.itemData ? this.props.itemData.map((item, index) => {
       let isSucess = item.success ? 'TimeLine-box TimeLine-success' : 'TimeLine-box TimeLine-fail';
       return (
