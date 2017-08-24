@@ -1,0 +1,121 @@
+@import '../../public/styles/variables.css';
+
+.nav-bar {
+  background: var(--Color-ffffff);
+
+  &.fixed {
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1;
+  }
+
+  &.line-bottom-header {
+    padding-bottom: 0.1rem;
+  }
+
+  .nav-title {
+    height: 4.4rem;
+    align-items: center;
+    position: relative;
+
+    .flex-full {
+      text-align: center;
+      overflow: hidden;
+    }
+
+    .major-title {
+      text-align: center;
+      color: var(--Color-Base-Important2);
+      font-weight: normal;
+      font-size: 1.8rem;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      overflow: hidden;
+
+      i {
+        margin-left: 0.5rem;
+        font-size: 1.8rem;
+      }
+    }
+
+    .sub-title {
+      text-align: center;
+      color: var(--Color-Base-Important2);
+      font-weight: normal;
+      font-size: 1.2rem;
+    }
+
+    .nav-button {
+      width: 4.5rem;
+      color: var(--Color-Base-Important3);
+
+      &.nav-button-left {
+        text-align: left;
+        padding-left: 1.5rem;
+        font-size: 1.8rem;
+        position: absolute;
+        left: 0;
+        top: 50%;
+        transform: translateY(-50%);
+
+        i {
+          font-size: 1.8rem;
+        }
+      }
+    }
+
+    .nav-button-right {
+      text-align: right;
+      font-size: 1.4rem;
+      padding-right: 1.5rem;
+      position: absolute;
+      right: 0;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+
+    .nav-center-tab {
+      justify-content: center;
+
+      &-item {
+        width: 7rem;
+        height: 2.5rem;
+        line-height: 2.5rem;
+        align-items: center;
+        font-size: 1.4rem;
+        border: 0.1rem solid #5c6bc2;
+        border-right: 0;
+        color: #5c6bc2;
+        text-align: center;
+
+        &-select {
+          color: #fff;
+          background: #5c6bc2;
+        }
+      }
+
+      &-item:first-of-type {
+        border-top-left-radius: 0.4rem;
+        border-bottom-left-radius: 0.4rem;
+      }
+
+      &-item:last-of-type {
+        border-right: 0.1rem solid #5c6bc2;
+        border-top-right-radius: 0.4rem;
+        border-bottom-right-radius: 0.4rem;
+      }
+    }
+  }
+
+  .Blue {
+    background-color: var(--Color-Base-Important3);
+
+    .nav-button,
+    .major-title,
+    .sub-title {
+      color: var(--Color-ffffff);
+    }
+  }
+}

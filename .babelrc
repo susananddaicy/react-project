@@ -1,0 +1,11 @@
+{
+  "presets": ["es2015", "stage-0", "react","node5"],
+  "plugins": ["react-hot-loader/babel"],
+   "env": {
+      "test": {
+        "plugins": [
+          "rewire"
+        ]
+      }
+    }
+}

@@ -1,0 +1,16 @@
+ .SwiperOut {
+  overflow: hidden
+ }
+ 
+ .SwiperOut__Item {
+  position: relative;
+  transform: translateX(0px);
+ }
+ 
+ .SwiperOut__btn {
+  position: absolute;
+  top: 0;
+  right: -80px;
+  text-align: center;
+  width: 80px
+ }

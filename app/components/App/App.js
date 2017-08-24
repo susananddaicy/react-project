@@ -1,5 +1,6 @@
 import React, { PropTypes, Component } from 'react';
 import Dialog from '../Dialog/Dialog.js'
+import Navbar from '../Navbar/Navbar.js';
 
 class App extends Component {
 
@@ -10,6 +11,7 @@ class App extends Component {
    */
   getChildContext() {
     return {
+      setTitle: this.setTitle,
       showDialog: this.showDialog,
       hideDialog: this.hideDialog,
     };
@@ -19,9 +21,11 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      dialogProps: false,
+      dialogProps: null,
+      navBarProps: null,
     };
     const arrHandler = [
+      'setTitle',
       'showDialog',
       'hideDialog',
     ];
@@ -51,12 +55,23 @@ class App extends Component {
     });
   }
 
-
+  setTitle(state) {
+    this.setState({
+      navBarProps: state,
+    });
+  }
 
 
   render() {
+    const AppStyle = { position: 'relative', minHeight: '100%', paddingTop: !this.state.navBarProps ? '0rem' : '4.4rem' };
+    
+    let NavBar = null;
+    if (this.state.navBarProps) {
+      NavBar = <Navbar {...this.state.navBarProps} />;
+    }
     return (
-      <div>
+      <div style={AppStyle}>
+        {NavBar}
         <section>{this.props.children}</section>  
         {this.state.dialogProps ? <Dialog options={this.state.dialogProps} /> : null}
       </div>
@@ -70,6 +85,7 @@ class App extends Component {
  * @type {Object}
  */
 App.childContextTypes = {
+  setTitle: PropTypes.func,
   showDialog: PropTypes.func,
   hideDialog: PropTypes.func,
 };

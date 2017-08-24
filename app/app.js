@@ -11,6 +11,7 @@ import Swiper from './Page/Slider/Slider';
 import TimeLine from './Page/TimeLinePage/TimeLinePage';
 import PanelInfo from './Page/PanelPage/PanelPage';
 import My from './Page/MyPage/MyPage';
+import SwiperOut from './Page/SwiperOutPage/SwiperOutPage';
 import FastClick from 'fastclick';
 
 FastClick.attach(document.body);
@@ -27,6 +28,7 @@ const run = function () {
         <Route path="timeLine" component={TimeLine}/>            
         <Route path="panel" component={PanelInfo}/>
         <Route path="my" component={My}/>
+        <Route path="swiperOut" component={SwiperOut}/>
       </Route>
     </Router>
   ), document.getElementById('app'));

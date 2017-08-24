@@ -6,6 +6,7 @@ import VipSwiper from './VipSwiper/VipSwiper.js'
 import Page from '../../components/Page/Page.js'
 import classNames from 'classnames';
 import Mydata from './My.js';
+// css变量
 import './MyPage.css';
 
 class MyPage extends Page {
@@ -20,12 +21,21 @@ class MyPage extends Page {
     });  
   }
 
+  componentWillMount() {
+    this.setTitle({
+      leftView: true,
+      naviBar: {
+        title: '我的简历',
+      },
+    });
+  }
+
   componentDidMount() {
-    document.addEventListener('scroll', this.onscrollFn);
+    //document.addEventListener('scroll', this.onscrollFn);
   } 
 
   componentWillUnmount() {
-    document.removeEventListener('scroll', this.onscrollFn);
+    //document.removeEventListener('scroll', this.onscrollFn);
   }
 
   clickHide() {

@@ -51,7 +51,7 @@ module.exports= {
     //只要配置dev server map这个参数就可以了
     proxy:{
       '/api/*':{
-        target: 'http://localhost:8080',
+        target: 'http://172.29.20.2:8080',
         secure: false
       }
     }
@@ -69,7 +69,7 @@ module.exports= {
     loaders: [
       {
         test: /\.jsx?$/,
-        loader: 'babel',
+        loader: 'babel-loader',
         include: APP_PATH,
         query: {
           //添加两个presents 使用这两种presets处理js或者jsx文件
@@ -84,10 +84,7 @@ module.exports= {
 	    test: /\.(eot|ttf|wav|mp3|svg|woff|woff2)$/,
       loader: 'file-loader?name=/fonts/[name].react.[ext]',//  /font 相对根目录 ，即：http://localhost:8080/font/
 	  }, 
-      {
-        test: /\.scss$/,
-        loaders: ['style', 'css', 'sass']
-      }, 
+      
       {
         test: /\.css$/,
         loader: ExtractTextPlugin.extract('style-loader', 'css-loader!postcss-loader'),

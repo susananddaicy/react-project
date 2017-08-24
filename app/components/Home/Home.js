@@ -1,13 +1,22 @@
 import './Home.css';
 import React, { Component } from 'react';
 import { Link } from 'react-router';
+import Page from '../Page/Page.js';
 
-class Home extends Component {
+class Home extends Page {
   constructor(props) {
     super(props);
     this.state = {
       val: 1,
-    };
+    };    
+  }
+
+  componentWillMount() {
+    this.setTitle({
+      naviBar: {
+        title: 'Home',
+      },
+    });
   }
 
   componentDidMount() {
@@ -62,7 +71,8 @@ class Home extends Component {
           <li><Link to="picker">Picker(选择器)</Link></li>
           <li><Link to="swiper">Swiper(轮播)</Link></li>   
           <li><Link to="timeLine">TimeLine(时间轴)</Link></li>         
-          <li><Link to="panel">Panel(面板)</Link></li>                   
+          <li><Link to="panel">Panel(面板)</Link></li>      
+          <li><Link to="swiperOut">左滑删除</Link></li>    
         </ul>
         </div>
         <p className="my"><Link to="my">我的简历</Link></p> 
