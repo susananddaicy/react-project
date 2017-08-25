@@ -30,7 +30,8 @@
     "react-router": "^2.4.1",
     "source-map-support": "0.4.0",
     "hammerjs": "2.0.8",
-    "swiper": "3.4.0"
+    "swiper": "3.4.0",
+    "lodash": "4.11.1"
   },
   "devDependencies": {
     "assets-webpack-plugin": "^3.4.0",
