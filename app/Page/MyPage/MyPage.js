@@ -3,13 +3,13 @@ import PanelInfo from '../../components/PanelInfo/PanelInfo.js';
 import TimeLine from '../../components/TimeLine/TimeLine.js';
 import Dialog from '../../components/Dialog/Dialog.js';
 import VipSwiper from './VipSwiper/VipSwiper.js'
-import Page from '../../components/Page/Page.js'
+import PageList from '../../components/Page/PageList.js';
 import classNames from 'classnames';
 import Mydata from './My.js';
 // css变量
 import './MyPage.css';
 
-class MyPage extends Page {
+class MyPage extends PageList {
   constructor(props) {
     super(props);
     this.state = {
@@ -19,6 +19,7 @@ class MyPage extends Page {
     ['onscrollFn', 'clickHide', 'clickIcon', 'showDialog'].forEach((method) => {
       this[method] = this[method].bind(this);
     });  
+   
   }
 
   componentWillMount() {
@@ -31,6 +32,8 @@ class MyPage extends Page {
   }
 
   componentDidMount() {
+    this.openPull('1'); 
+    super.componentDidMount();
     //document.addEventListener('scroll', this.onscrollFn);
   } 
 
@@ -38,7 +41,15 @@ class MyPage extends Page {
     //document.removeEventListener('scroll', this.onscrollFn);
   }
 
+  onPullDown() {
+    setTimeout(() => {
+      this.endPull();
+    },1000);
+  }
+
   clickHide() {
+    console.log('clickHide');
+    console.log(this.state.isHide);
     this.setState({
       isHide: !this.state.isHide,
     });
@@ -155,7 +166,7 @@ class MyPage extends Page {
         />
         <div className="myselfTalk">
           <p className="myselfTalk-Text">掌握的技能</p> 
-          <div className="content">Html5,React,ES6,Webpack,Eslint,Node,Hybrid</div>
+          <div className="contents">Html5,React,ES6,Webpack,Eslint,Node,Hybrid</div>
         </div>         
       </div>
     );

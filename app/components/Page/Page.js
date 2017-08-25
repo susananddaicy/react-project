@@ -35,9 +35,9 @@ class Page extends Component {
     });
   }
 
-   shouldComponentUpdate(nextProps, nextState) {
-     return !_.isEqual(this.props, nextProps) && !_.isEqual(this.state, nextState);
-   }
+   //shouldComponentUpdate(nextProps, nextState) {
+     //return !_.isEqual(this.props, nextProps) && !_.isEqual(this.state, nextState);
+   //}
 
 
   componentWillUnmount() {
@@ -161,6 +161,39 @@ class Page extends Component {
    */
   hideDialog() {
     this.context.hideDialog();
+  }
+
+
+  /**
+   * 获取应用容器DOM ID
+   * @return      {Element}
+   */
+  getAppView() {
+    return this.context.getAppView();
+  }
+
+  /**
+   * 获取页面容器DOM ID
+   * @return      {Element}
+   */
+  getPageView() {
+    return this.context.getPageView();
+  }
+
+  /**
+   * 获取Top Loding DOM ID
+   * @return      {Element}
+   */
+  getTopLoadingView() {
+    return this.context.getTopLoadingView();
+  }
+
+  /**
+   * 获取Bottom Loading DOM ID
+   * @return      {Element}
+   */
+  getBottomLoadingView() {
+    return this.context.getBottomLoadingView();
   }
 
 
@@ -308,6 +341,10 @@ Page.contextTypes = {
   setTitle: React.PropTypes.func,
   showDialog: React.PropTypes.func,
   hideDialog: React.PropTypes.func,
+  getAppView: React.PropTypes.func,
+  getPageView: React.PropTypes.func,
+  getTopLoadingView: React.PropTypes.func,
+  getBottomLoadingView: React.PropTypes.func,  
 };
 
 export default Page;

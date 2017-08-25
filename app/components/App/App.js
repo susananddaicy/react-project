@@ -1,6 +1,8 @@
 import React, { PropTypes, Component } from 'react';
 import Dialog from '../Dialog/Dialog.js'
 import Navbar from '../Navbar/Navbar.js';
+import PullLoading from '../PullLoading/PullLoading.js';
+
 
 class App extends Component {
 
@@ -14,6 +16,10 @@ class App extends Component {
       setTitle: this.setTitle,
       showDialog: this.showDialog,
       hideDialog: this.hideDialog,
+      getAppView: this.getAppView,
+      getPageView: this.getPageView,
+      getTopLoadingView: this.getTopLoadingView,
+      getBottomLoadingView: this.getBottomLoadingView,      
     };
   }
 
@@ -32,6 +38,11 @@ class App extends Component {
     arrHandler.forEach(methodName => {
       this[methodName] = this[methodName].bind(this);
     });
+
+    // 容器DOM
+    this.domAppView = null;
+    this.domPageView = null;
+
   }
 
 
@@ -61,6 +72,21 @@ class App extends Component {
     });
   }
 
+  getAppView() {
+    return this.domAppView || document.querySelectorAll('.App')[0];
+  }
+
+  getPageView() {
+    return this.domPageView || document.querySelectorAll('.Page')[0];
+  }
+
+  getTopLoadingView() {
+    return this.domTopLoadingView || document.querySelectorAll('.TopLoading')[0];
+  }
+
+  getBottomLoadingView() {
+    return this.domBottomLoadingView || document.querySelectorAll('.BottomLoading')[0];
+  }
 
   render() {
     const AppStyle = { position: 'relative', minHeight: '100%', paddingTop: !this.state.navBarProps ? '0rem' : '4.4rem' };
@@ -72,7 +98,9 @@ class App extends Component {
     return (
       <div style={AppStyle}>
         {NavBar}
+        <PullLoading className="TopLoading" getRef={(c) => { this.domTopLoadingView = c; }} />
         <section>{this.props.children}</section>  
+        <PullLoading className="BottomLoading" getRef={(c) => { this.domBottomLoadingView = c; }} />
         {this.state.dialogProps ? <Dialog options={this.state.dialogProps} /> : null}
       </div>
     )
@@ -88,6 +116,10 @@ App.childContextTypes = {
   setTitle: PropTypes.func,
   showDialog: PropTypes.func,
   hideDialog: PropTypes.func,
+  getAppView: PropTypes.func,
+  getPageView: PropTypes.func,
+  getTopLoadingView: PropTypes.func,
+  getBottomLoadingView: PropTypes.func,
 };
 
 export default App;
