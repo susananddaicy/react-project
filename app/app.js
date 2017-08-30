@@ -13,6 +13,7 @@ import PanelInfo from './Page/PanelPage/PanelPage';
 import My from './Page/MyPage/MyPage';
 import SwiperOut from './Page/SwiperOutPage/SwiperOutPage';
 import PullLoadingPage from './Page/PullLoadingPage/PullLoadingPage';
+import NoticeBarPage from './Page/NoticeBarPage/NoticeBarPage';
 import FastClick from 'fastclick';
 
 FastClick.attach(document.body);
@@ -31,6 +32,7 @@ const run = function () {
         <Route path="my" component={My}/>
         <Route path="swiperOut" component={SwiperOut}/>
         <Route path="pullLoading" component={PullLoadingPage}/>        
+        <Route path="noticeBar" component={NoticeBarPage}/>    
       </Route>
     </Router>
   ), document.getElementById('app'));

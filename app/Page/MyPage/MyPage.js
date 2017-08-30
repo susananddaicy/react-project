@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import PanelInfo from '../../components/PanelInfo/PanelInfo.js';
+import NoticeBar from '../../components/NoticeBar/NoticeBar.js';
 import TimeLine from '../../components/TimeLine/TimeLine.js';
 import Dialog from '../../components/Dialog/Dialog.js';
 import VipSwiper from './VipSwiper/VipSwiper.js'
@@ -14,7 +15,7 @@ class MyPage extends PageList {
     super(props);
     this.state = {
       showNavClassName: 'nav-pos-init',
-      isHide: false,
+      isHide: true,
     };
     ['onscrollFn', 'clickHide', 'clickIcon', 'showDialog'].forEach((method) => {
       this[method] = this[method].bind(this);
@@ -145,6 +146,14 @@ class MyPage extends PageList {
           </div>
           {panelinfoHtml}
         </div>
+
+        <NoticeBar marqueeProps={{ loop: true }}>
+          Notice: Hello,My name is Daichunyu and this is my resume,nice to meet you !
+        </NoticeBar>
+        <VipSwiper
+          items = {swiperData}
+          title = {"掌握的技能："}
+        />
         <div className="WorkExprise">
           <p className="WorkExprise-Text">工作经历</p> 
           <TimeLine itemData={workData} />
@@ -160,10 +169,6 @@ class MyPage extends PageList {
         <div className={classNames('MyBrief-Text-fix', 'line-bottom', this.state.showNavClassName)}>
           基本信息
         </div>  
-        <VipSwiper
-          items = {swiperData}
-          title = {"掌握的技能："}
-        />
         <div className="myselfTalk">
           <p className="myselfTalk-Text">掌握的技能</p> 
           <div className="contents">Html5,React,ES6,Webpack,Eslint,Node,Hybrid</div>
