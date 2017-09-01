@@ -17,7 +17,40 @@ class Home extends Page {
         title: 'Home',
       },
     });
+
+    // 在JavaScript中，回调函数具体的定义为：函数A作为参数(函数引用)传递到另一个函数B中，
+    // 并且这个函数B执行函数A。我们就说函数A叫做回调函数。如果没有名称(函数表达式)，就叫做匿名回调函数。因此callback 不一定用于异步，一般同步(阻塞)的场景下也经常用到回调，比如要求执行某些操作后执行回调函数。
+    //一个同步(阻塞)中使用回调的例子，目的是在func1代码执行完成后执行func2。
+    var func1=function(callback){
+      console.log('执行func1');
+      (callback && typeof(callback) === "function") && callback();
+    }
+    var func2=function(){
+      console.log('执行func2');
+    }
+    func1(func2);
+
+
+    // Promise 是异步编程的一种解决方案
+    let p1 = new Promise((resolve, reject) => {
+      console.log('这是我的异步代码，我执行了，但是不必等我，我是异步的');
+      // 异步成功，执行resolve()
+      resolve("succcess");
+      // 异步失败，执行reject()
+      // reject();
+    });
+
+    p1.then((param) => {
+      // 异步成功的回调
+      console.log(param);
+    }, ()=> {
+      // 异步失败的回调
+      console.log('fail');
+    })
+      
   }
+
+
 
   componentDidMount() {
     // isBatchingUpdates为true,2次setState没有生效，放在了dirtyComponents
@@ -53,7 +86,7 @@ class Home extends Page {
 // 浏览器会自动配置一个最小间隔时间，这个时间就叫最小时间粒度，不同浏览器这个时间大小也不同。
 //
 //
-//http://www.ruanyifeng.com/blog/2014/10/event-loop.html
+// http://www.ruanyifeng.com/blog/2014/10/event-loop.html
 // http://javascript.ruanyifeng.com/advanced/timer.html
 
 

@@ -32,7 +32,7 @@ class Marquee extends Component {
         if (container && node) {
           const containerWidth = container.offsetWidth;
           const textWidth = node.offsetWidth;
-          const overflowWidth = textWidth - containerWidth;
+          const overflowWidth = textWidth - containerWidth; // 这里判断内容的宽度超出了父节点的宽度，开始滚动
           if (overflowWidth !== this.state.overflowWidth) {
             this.setState({
               overflowWidth,
@@ -72,7 +72,6 @@ class Marquee extends Component {
             this.setState({
               animatedWidth,
             });
-    
             this._marqueeTimer = setTimeout(animate, TIMEOUT);
           }
         };
@@ -111,7 +110,7 @@ Marquee.propTypes = {
     trailing: React.PropTypes.number,
     fps: React.PropTypes.number,
     className: React.PropTypes.string,
-  };
+};
 
 
 Marquee.defaultProps = {

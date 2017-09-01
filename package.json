@@ -6,11 +6,11 @@
   "scripts": {
     "dev": "webpack-dev-server --progress --profile --colors --hot --inline",
     "build": "webpack --progress --profile --colors",
-    "   ": "test"
+    "test": "test"
   },
   "author": "",
   "license": "ISC",
- "dependencies": {
+  "dependencies": {
     "babel-polyfill": "6.7.4",
     "babel-runtime": "6.6.1",
     "bluebird": "3.3.5",
