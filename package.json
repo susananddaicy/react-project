@@ -31,7 +31,8 @@
     "source-map-support": "0.4.0",
     "hammerjs": "2.0.8",
     "swiper": "3.4.0",
-    "lodash": "4.11.1"
+    "lodash": "4.11.1",
+    "react-highcharts": "12.0.0"
   },
   "devDependencies": {
     "assets-webpack-plugin": "^3.4.0",
