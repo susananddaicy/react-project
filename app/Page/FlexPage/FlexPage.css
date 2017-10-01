@@ -1,0 +1,23 @@
+.Box {
+  width: 10rem;
+  height: 10rem;
+  border-radius: 1rem;
+  background-color: #B4B1B1;
+}
+.Item {
+  width: 2rem;
+  height: 2rem;
+  background-color: black;
+  border-radius: 1rem;
+}
+.Tip {
+  font-size: 1.5rem;
+}
+.Box1 {
+  padding: 1rem;
+  background-color: #B4B1B1;
+  height: 10rem;
+}
+.Item1 {
+    background-color: #ffffff;
+  }

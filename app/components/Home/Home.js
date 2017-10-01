@@ -108,6 +108,7 @@ class Home extends Page {
           <li><Link to="swiperOut">SwiperAction(左滑删除)</Link></li>    
           <li><Link to="pullLoading">PullLoading(下拉刷新)</Link></li>  
           <li><Link to="noticeBar">NoticeBar(通告栏)</Link></li> 
+          <li><Link to="flex">Flex(Flex布局)</Link></li> 
         </ul>
         </div>
         <p className="my"><Link to="my">我的简历</Link></p> 

@@ -14,6 +14,7 @@ import My from './Page/MyPage/MyPage';
 import SwiperOut from './Page/SwiperOutPage/SwiperOutPage';
 import PullLoadingPage from './Page/PullLoadingPage/PullLoadingPage';
 import NoticeBarPage from './Page/NoticeBarPage/NoticeBarPage';
+import FlexPage from './Page/FlexPage/FlexPage.js';
 import FastClick from 'fastclick';
 
 FastClick.attach(document.body);
@@ -32,7 +33,8 @@ const run = function () {
         <Route path="my" component={My}/>
         <Route path="swiperOut" component={SwiperOut}/>
         <Route path="pullLoading" component={PullLoadingPage}/>        
-        <Route path="noticeBar" component={NoticeBarPage}/>    
+        <Route path="noticeBar" component={NoticeBarPage}/>  
+        <Route path="flex" component={FlexPage}/>    
       </Route>
     </Router>
   ), document.getElementById('app'));
