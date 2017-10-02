@@ -23,7 +23,7 @@ class NoticeBar extends Component {
       return (
         <div className="NoticeBar flex-hrz">
           <i className="lufont icon-message flex-init"></i>
-          <div className="flex-full" style={{width: '90%'}}>
+          <div className="flex-full">
             <Marquee text={children} {...marquee} />
           </div>
         </div>

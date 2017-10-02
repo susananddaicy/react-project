@@ -93,7 +93,7 @@ class Marquee extends Component {
         ...this.props.style,
       };      
       return (
-        <div style={{ overflow: 'hidden' }} role="marquee">
+        <div style={{ overflow: 'hidden',width: '24rem' }} role="marquee">
           <div ref="text" style={style}>{text} </div>
         </div>
       );
