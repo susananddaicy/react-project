@@ -2,6 +2,7 @@ import './Home.css';
 import React, { Component } from 'react';
 import { Link } from 'react-router';
 import Page from '../Page/Page.js';
+import InputItem from '../InputItem/InputItem';
 
 class Home extends Page {
   constructor(props) {
@@ -9,12 +10,14 @@ class Home extends Page {
     this.state = {
       val: 1,
     };    
+    this.inputChangeCallback = this.inputChangeCallback.bind(this);
+    this.inputFocusCallback = this.inputFocusCallback.bind(this);
   }
 
   componentWillMount() {
     this.setTitle({
       naviBar: {
-        title: 'Home',
+        title: 'React Components',
       },
     });
 
@@ -92,24 +95,41 @@ class Home extends Page {
 
   }
 
+  inputChangeCallback(value) {
+   
+  }
+
+  inputFocusCallback() {
+    
+  }
+
   render() {
     return (
       <div className="Home">
         <div className="Home-container">
-        <p>React Components</p>
-        <p className="desc">移动端组件库</p>     
-        <ul>
-          <li><Link to="actionSheet">ActionSheet(动作面板)</Link></li>
-          <li><Link to="accordion">Accordion(手风琴)</Link></li>    
-          <li><Link to="picker">Picker(选择器)</Link></li>
-          <li><Link to="swiper">Swiper(轮播)</Link></li>   
-          <li><Link to="timeLine">TimeLine(时间轴)</Link></li>         
-          <li><Link to="panel">Panel(面板)</Link></li>      
-          <li><Link to="swiperOut">SwiperAction(左滑删除)</Link></li>    
-          <li><Link to="pullLoading">PullLoading(下拉刷新)</Link></li>  
-          <li><Link to="noticeBar">NoticeBar(通告栏)</Link></li> 
-          <li><Link to="flex">Flex(Flex布局)</Link></li> 
-        </ul>
+          <p>React Components</p>
+          <p className="desc">移动端组件库</p>     
+          <section>
+          <div>
+            <InputItem hideLabel placeholder="搜索组件..." 
+              inputChangeCallback = {this.inputChangeCallback} 
+              inputFocusCallback = {this.inputFocusCallback}
+            />
+          </div>
+          
+          </section>
+          <ul>
+            <li><Link to="actionSheet">ActionSheet(动作面板)</Link></li>
+            <li><Link to="accordion">Accordion(手风琴)</Link></li>    
+            <li><Link to="picker">Picker(选择器)</Link></li>
+            <li><Link to="swiper">Swiper(轮播)</Link></li>   
+            <li><Link to="timeLine">TimeLine(时间轴)</Link></li>         
+            <li><Link to="panel">Panel(面板)</Link></li>      
+            <li><Link to="swiperOut">SwiperAction(左滑删除)</Link></li>    
+            <li><Link to="pullLoading">PullLoading(下拉刷新)</Link></li>  
+            <li><Link to="noticeBar">NoticeBar(通告栏)</Link></li> 
+            <li><Link to="flex">Flex(Flex布局)</Link></li> 
+          </ul>
         </div>
         <p className="my"><Link to="my">我的简历</Link></p> 
       </div>
