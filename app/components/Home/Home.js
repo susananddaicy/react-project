@@ -111,12 +111,12 @@ class Home extends Page {
           <p className="desc">移动端组件库</p>     
           <section>
           <div>
-            <InputItem hideLabel placeholder="搜索组件..." 
+            <InputItem placeholder="搜索组件..." 
               inputChangeCallback = {this.inputChangeCallback} 
               inputFocusCallback = {this.inputFocusCallback}
             />
           </div>
-          
+
           </section>
           <ul>
             <li><Link to="actionSheet">ActionSheet(动作面板)</Link></li>
@@ -129,9 +129,9 @@ class Home extends Page {
             <li><Link to="pullLoading">PullLoading(下拉刷新)</Link></li>  
             <li><Link to="noticeBar">NoticeBar(通告栏)</Link></li> 
             <li><Link to="flex">Flex(Flex布局)</Link></li> 
+            <li><Link to="my">我的简历</Link></li> 
           </ul>
         </div>
-        <p className="my"><Link to="my">我的简历</Link></p> 
       </div>
     );
   }

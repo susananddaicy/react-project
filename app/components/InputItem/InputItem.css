@@ -1,6 +1,5 @@
 .InputItem {
   border-width: 1px 0;
-  background-color: #fff;
   &-label {
     padding-right: 2rem;
     color: #13334d;
@@ -10,22 +9,18 @@
       padding-right: 1rem;
     }
   }
-
-  &-labelicon {
-    padding-right: 2rem;
-    color: #13334d;
-  }
-
+  
   &-input {
     height: 2rem;
-    width: 100%;
-    color: #13334d;
+    width: 10rem;
+    color: #fff;
     font-size: 1.5rem;
     box-sizing: border-box;
     padding: 0;
     border: none;
     display: block;
     -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    background-color: #A8A5A5;
   }
 
   &-input:disabled {
@@ -44,22 +39,7 @@
 
   &-input::-webkit-input-placeholder {
     font-size: 1rem;
-    color: #13334d;
+    color: #fff;
     box-sizing: border-box;
-  }
-
-  &-unit {
-    color: #13334d;
-    font-size: 1.5rem;
-    padding-left: 2rem;
-  }
-
-  .icon-close {
-    color: #13334d;
-    padding-left: 1.5rem;
-  }
-
-  .css-close {
-    display: none;
   }
 }

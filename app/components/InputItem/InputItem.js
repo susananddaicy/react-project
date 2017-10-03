@@ -136,11 +136,9 @@ class InputItem extends Component {
 
     return (
       <div className={classNames('InputItem', 'flex-hrz', className)}>
-        {hideLabel ? null : <label className={`InputItem-label flex-init ${iconType && iconCallback ? 'InputItem-label-withicon' : ''}`}>{labelName}</label>}
-        {iconType && iconCallback ? <span className={`InputItem-labelicon flex-init icon lufont icon-${iconType}`} onClick={iconCallback}></span> : null}
         <input
           ref={(ref) => { this.InputItem = ref; }}
-          className="InputItem-input flex-full"
+          className="InputItem-input flex-init"
           placeholder={placeholder}
           type={inputType}
           onChange={this.inputItemChange}
@@ -150,39 +148,23 @@ class InputItem extends Component {
           value={value}
           {...others}
         />
-        {
-          // others 对象中包含从props传过来的value
-          // 所以value要放到它之后，否则会出现输入不响应的情况
-          // 此处会导致input标签上加入一些非标准属性，出现warning
-        }
-        <span
-          className={
-            classNames('flex-init', 'icon', 'lufont', 'icon-close', { 'css-close': hideClose })
-          }
-          onClick={this.clearInputItem}>
-        </span>
-        {unit ? <span className="InputItem-unit flex-init">{unit}</span> : null}
       </div>
     );
   }
 }
 
 InputItem.propTypes = {
-  labelName: PropTypes.string,
-  unit: PropTypes.string,
   placeholder: PropTypes.string,
   inputChangeCallback: PropTypes.func.isRequired,
   inputBlurCallback: PropTypes.func,
   inputFocusCallback: PropTypes.func,
   disabled: PropTypes.bool,
-  hideLabel: PropTypes.bool,
   className: PropTypes.string,
   inputType: PropTypes.string,
   inputFilter: PropTypes.func,
 };
 
 InputItem.defaultProps = {
-  labelName: '',
   placeholder: '',
   className: '',
   inputType: 'text', // tel
