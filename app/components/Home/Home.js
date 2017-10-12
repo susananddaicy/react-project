@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 import { Link } from 'react-router';
 import Page from '../Page/Page.js';
 import InputItem from '../InputItem/InputItem';
+import $ from 'jquery';
 
 class Home extends Page {
   constructor(props) {
@@ -50,7 +51,16 @@ class Home extends Page {
       // 异步失败的回调
       console.log('fail');
     })
-      
+
+    $.ajax({
+			url: 'http://localhost:3000/blog',
+			dataType: 'json',
+			cache: false,
+			success: (data) => {
+				console.log(data);
+			}
+    });
+    
   }
 
 

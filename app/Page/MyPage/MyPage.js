@@ -25,7 +25,7 @@ class MyPage extends PageList {
 
   componentWillMount() {
     this.setTitle({
-      leftView: true,
+      leftView: false,
       naviBar: {
         title: '我的简历',
       },
