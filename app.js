@@ -25,15 +25,9 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-// 定义所有的增删改查的借口
+
 app.use('/', routes);
 app.get('/blog', blog.list);
-//app.get('/blog/:id', blog.get);  
-// app.delete('/comments/:id', blog.delete);
-//app.get('/comment/:id', blog.commentList);
-//app.post('/comment/:id', blog.commentAdd, blog.commentList);  
-//app.post('/blog', blog.add);    
-//app.use('/users', users);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
