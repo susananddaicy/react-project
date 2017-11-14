@@ -5,14 +5,18 @@ import Page from '../Page/Page.js';
 import InputItem from '../InputItem/InputItem';
 import $ from 'jquery';
 
+const wait = ms => new Promise(resolve => setTimeout(resolve, ms));
+
 class Home extends Page {
   constructor(props) {
     super(props);
     this.state = {
-      val: 1,
+      val: 0,
+      counterAsync: 0
     };    
     this.inputChangeCallback = this.inputChangeCallback.bind(this);
     this.inputFocusCallback = this.inputFocusCallback.bind(this);
+    this.updateAsync = this.updateAsync.bind(this);
   }
 
   componentWillMount() {
@@ -102,8 +106,32 @@ class Home extends Page {
 // http://www.ruanyifeng.com/blog/2014/10/event-loop.html
 // http://javascript.ruanyifeng.com/advanced/timer.html
 
-
+    //this.updateAsync();
   }
+
+
+  async updateAsync() {
+    this.setState({
+      counterAsync: this.state.counterAsync + 1,
+    });
+    console.log(this.state.counterAsync);
+    this.setState({
+      counterAsync: this.state.counterAsync + 1,
+    });
+    console.log(this.state.counterAsync);
+    await wait(1000);
+    this.setState({
+      counterAsync: this.state.counterAsync + 1,
+    });
+    console.log(this.state.counterAsync);
+    this.setState({
+      counterAsync: this.state.counterAsync + 1,
+    });
+    console.log(this.state.counterAsync);
+  }
+
+
+
 
   inputChangeCallback(value) {
    
