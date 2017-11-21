@@ -104,8 +104,8 @@ module.exports= {
     new ExtractTextPlugin('public/styles/react-component.css'), // 把css自动插入到head里
     new HtmlwebpackPlugin({ // 会把压缩好的app.js和vendors.js自动插入到html中的body里
       title: 'My first react app',
-      template: path.resolve(ROOT_PATH, 'views/index.ejs'),
-      filename: 'index.ejs',
+      template: path.resolve(APP_PATH, 'index.html'),
+      filename: 'index.html',
       chunks: ['app'],
       inject: 'body'
     })
