@@ -4,10 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "webpack-dev-server --progress --profile --colors --hot --inline",
-    "dev:server": "node server",
-    "build": "webpack --progress --profile --colors",
-    "test": "test"
+    "dev": "webpack-dev-server --progress --profile --colors --hot --inline | node app.js", // 同时启动过webpack-dev-server（8080）和node 服务器（3002）
+    "dev:server": "node app.js",
+    "build": "webpack --progress --profile --colors"
   },
   "author": "",
   "license": "ISC",

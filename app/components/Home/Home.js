@@ -57,7 +57,7 @@ class Home extends Page {
     })
 
     $.ajax({
-			url: 'http://localhost:3000/blog',
+			url: 'http://localhost:3000/list',
 			dataType: 'json',
 			cache: false,
 			success: (data) => {
