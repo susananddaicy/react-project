@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "webpack-dev-server --progress --profile --colors --hot --inline | node app.js", 
+    "dev": "webpack-dev-server --progress --profile --colors --hot --inline", 
     "dev:server": "node app.js",
     "build": "webpack --progress --profile --colors"
   },
