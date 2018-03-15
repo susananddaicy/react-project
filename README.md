@@ -149,11 +149,154 @@ componentDidMount() {
 ```
 
 
+# 高阶组件
+附：高阶函数就是接受函数作为输入或者输出的函数
+高阶组件仅仅是一个接受组件输入并返回组件的函数
+做为一个高阶组件，可以在原有组件的基础上，对其增加新的功能和行为。我们一般希望编写的组件尽量纯净或者说其中的业务逻辑尽量单一。但是如果各种组件间又需要增加新功能，如打印日志，获取数据和校验数据等和展示无关的逻辑的时候，这些公共的代码就会被重复写很多遍。因此，我们可以抽象出一个高阶组件，用以给基础的组件增加这些功能，类似于插件的效果。
+
+作者：鸠摩智
+链接：https://juejin.im/post/59eb26e951882578c6738fb0
+来源：掘金
+著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。
+
+实现高阶组件的方式有以下两种:
+* 属性代理(Props Proxy)
+* 反向继承(Inheritance Inversion)
+1.属性代理
+包裹原来的组件来操作props
+```
+import React, { Component } from 'React';
+//高阶组件定义
+const HOC = (WrappedComponent) =>
+  class WrapperComponent extends Component {
+    render() {
+      return <WrappedComponent {...this.props} />;
+    }
+}
+//普通的组件
+class WrappedComponent extends Component{
+    render(){
+        //....
+    }
+}
+
+//高阶组件使用
+export default HOC(WrappedComponent)
+```
+操作props
+```
+const HOC = (WrappedComponent) =>
+    class WrapperComponent extends Component {
+        render() {
+            const newProps = {
+                name: 'HOC'
+            }
+            return <WrappedComponent
+                {...this.props}
+                {...newProps}
+            />;
+        }
+    }
+```
+
+```
+//检验规则，表格组件
+const FormValidator = (WrappedComponent, validator, trigger) => {
+
+   getTrigger(trigger, validator) {
+      var originTrigger = this.props[trigger];
+
+      return function(event) {
+          //触发验证机制,更新状态
+          // do something ...
+          originTrigger(event);
+      }
+  }
+
+  var newProps = {
+    ...this.props,
+    [trigger]:   this.getTrigger(trigger, validator) //触发时机,重新绑定原有触发机制
+  };
+
+  return <WrappedComponent  {...newProps} />
+}
+```
+
+另一方面，ES7中新的语法Decorator也可以用来实现和上面写法一样的效果。
+
+```
+function LogDecorator(msg) {
+  return (WrappedComponent) => {
+    return class LogHoc extends Component {
+      render() {
+        // do something with this component
+        console.log(msg);
+        <WrappedComponent {...this.props} />
+      }
+    }
+  }
+}
+
+@LogDecorator('hello world')
+class HelloComponent extends Component {
+
+  render() {
+    //...
+  }
+}
+
+```
+高阶组件是React 中一个很重要且较复杂的概念，高阶组件在很多第三方库（如Redux）中都被经常使用，即使你开发的是普通的业务项目，用好高阶组件也能显著提高你的代码质量。高阶组件的定义是类比于高阶函数的定义。高阶函数接收函数作为参数，并且返回值也是一个函数。类似的，高阶组件接收React组件作为参数，并且返回一个新的React组件。高阶组件本质上也是一个函数，并不是一个组件，这一点一定要注意。
+
+假设我有一个组件，需要从LocalStorage中获取数据，然后渲染出来。于是我们可以这样写组件代码：
+
+```
+import React, { Component } from 'react'
+
+class MyComponent extends Component {
+
+  componentWillMount() {
+      let data = localStorage.getItem('data');
+      this.setState({data});
+  }
+
+  render() {
+    return <div>{this.state.data}</div>
+  }
+}
+```
+代码很简单，但当我有其他组件也需要从LocalStorage中获取同样的数据展示出来时，我需要在每个组件都重复componentWillMount中的代码，这显然是很冗余的。下面让我们来看看使用高阶组件可以怎么改写这部分代码。
+
+```
+import React, { Component } from 'react'
+
+function withPersistentData(WrappedComponent) {
+  return class extends Component {
+    componentWillMount() {
+      let data = localStorage.getItem('data');
+        this.setState({data});
+    }
+
+    render() {
+      // 通过{...this.props} 把传递给当前组件的属性继续传递给被包装的组件WrappedComponent
+      return <WrappedComponent data={this.state.data} {...this.props} />
+    }
+  }
+}
+
+class MyComponent2 extends Component {  
+  render() {
+    return <div>{this.props.data}</div>
+  }
+}
+
+const MyComponentWithPersistentData = withPersistentData(MyComponent2)
+
+```
+withPersistentData就是一个高阶组件，它返回一个新的组件，在新组件的componentWillMount中统一处理从LocalStorage中获取数据的逻辑，然后将获取到的数据以属性的方式传递给被包装的组件WrappedComponent，这样在WrappedComponent中就可以直接使用this.props.data获取需要展示的数据了，如MyComponent2所示。当有其他的组件也需要这段逻辑时，继续使用withPersistentData这个高阶组件包装这些组件就可以了。
 
 
-
-
-
+有些同学可能会觉得高阶组件有些类似父组件的使用。例如，我们完全可以把高阶组件中的逻辑放到一个父组件中去执行，执行完成的结果再传递给子组件。从逻辑的执行流程上来看，高阶组件确实和父组件比较相像，但是高阶组件强调的是逻辑的抽象。高阶组件是一个函数，函数关注的是逻辑；父组件是一个组件，组件主要关注的是UI/DOM。如果逻辑是与DOM直接相关的，那么这部分逻辑适合放到父组件中实现；如果逻辑是与DOM不直接相关的，那么这部分逻辑适合使用高阶组件抽象，如数据校验、请求发送等。
 
 
 
